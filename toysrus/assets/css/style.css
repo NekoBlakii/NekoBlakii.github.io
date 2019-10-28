@@ -1,0 +1,271 @@
+/* GENERALITES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+    border-style: none;
+    border : none;
+}
+
+select {
+    width: 130px;
+}
+
+input {
+    margin-left : 5px;
+    padding: 0 5px;
+}
+
+body{
+    background-image: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-position: center top;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+/* HEADER */
+.logo {
+    display: block;
+    padding: 15px;
+}
+
+header {
+    width: 51%; /*  PROBLEME AVEC LIMAGE DE FOND LORSQUON RETRECI LA PAGE */
+}
+
+.nav-bar {
+    display: flex;
+    background-color : #0056af;
+    margin: 0 auto;
+}
+
+.btn {
+    border-right-style: dotted;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+    .btn a {
+        display: block;
+        height: 44px;
+        padding: 10px;
+    }
+
+    .btn a:hover {
+        background-color: #b9d2f3 ;
+        color: #0056af;
+        border-color: #0056af;
+    }
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #b9d2f3;
+        min-width: 122px;
+        z-index: 2;
+    }
+    
+    .dropdown-content a {
+        color: #111;
+        height: 30px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 30px;
+        display: block;
+        text-align: center;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f1
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+/* MAIN */
+
+main {
+    text-align: center;
+    width: 51%;
+}
+
+    main h1 {
+        font-size: 30px;
+        padding-top: 40px;
+    }
+
+    main a {
+        font-size: 14px;
+        font-weight: 700;
+        color : #0056af;
+    }
+
+    main h2 {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: normal;
+    }
+
+    main h3 {
+        color : #0056af;
+        font-size: 14px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+     
+    main h4 {
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: bold;
+    }
+
+/* GALLERIE */
+
+.toy-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 33%;
+}
+
+.h1-toys {
+    padding-bottom: 20px;
+}
+
+.toy-article {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33%;
+    height: 400px;
+    padding : 50px;
+    position: relative;
+    z-index: 1;
+}
+
+    .toy-article a {
+        padding : 10px 0px;
+    }
+
+    .toy-article .price {
+        height: 10%;
+        margin: auto;
+    }
+
+    
+    .toy-article > img {
+        display: block;
+        height: 100%;
+        left: 50%;
+        position: absolute;
+        transform: translateX( -50% );
+        z-index: 1;
+    }
+
+    .toy-article > .price {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX( -50% );
+        top: 80%;
+        z-index: 1;
+    }
+
+/* DETAIL */
+
+.toy-detail-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 13px;
+}
+
+.toy-detail {
+    display: flex;
+    text-align: justify;
+    justify-content: space-around;
+}
+
+    .toy-detail h3,h4 {
+        display: inline;
+    }
+
+.col-right{
+    flex-basis: 60%;
+}
+
+    .col-right p {
+        line-height: 24px;
+    }
+
+
+.col-left {
+    text-align: center;
+    flex-basis: 40%;
+}
+
+.col-right p {
+    padding-bottom: 30px;
+}
+
+.price {
+    padding: 25px 0;
+    font-size: 48px;
+    line-height: 30px;
+}
+
+.toy-title {
+    padding-bottom: 35px;
+    padding-top: 40px;
+}
+
+.col-right .brand {
+    padding-bottom: 20px;
+}
+
+.stock-container {
+    width: 50%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+
+/* PAGINATION */
+
+.pagination {
+    background-color : #0056af;
+    margin-bottom: 50px;
+    margin: 20px auto 50px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination .btn:first-child {
+    border-left-style: dotted;
+}
+
+.pagination a {
+    color: #fff;
+}

@@ -1,0 +1,289 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        <title>CV BISIAUX Alexia</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    </head>
+    
+    
+    
+    <body>
+        
+        <!-- MENU -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#monMenu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="monMenu" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#about">A Propos</a></li>
+                        <li><a href="#skills">Compétences</a></li>
+                        <li><a href="#experiences">Expériences</a></li>
+                        <li><a href="#formations">Formations</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+            
+            </div>
+        </nav>
+          
+        <!-- A PROPOS -->
+        <section id="about" class="container-fluid">
+            <div class="col-xs-8 col-md-4 profile-picture">
+                <img src="images/me.jpg" alt="Bisiaux Alexia" class="img-circle">
+            </div>
+            <div class="heading">
+                <h1>Alexia Bisiaux</h1>
+                <h3>Développeuse full-stack</h3>
+                <a href="docs/Technicien%20informatique%20BISIAUX%20ALEXIA.pdf" class="button1">Télécharger mon CV</a>
+            </div>
+        </section>
+        
+        
+        <!-- COMPETENCES -->
+        <section id="skills">
+            <div class="traitcouleur"></div>
+            <div class="heading">
+                <h2>Compétences</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <div id="myLegend"></div>
+                    
+                    <!-- PREMIERE COLONNE -->
+                    
+                    <div class="col-md-6">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                <h5>HTML 100%</h5>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                                <h5>CSS 90%</h5>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                                <h5>JavaScript 70%</h5>
+                            </div>
+                        </div>
+                    </div>
+                                 
+                    <!-- DEUXIEME COLONNE -->
+                    
+                    <div class="col-md-6">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                                <h5>SQL 70%</h5>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                                <h5>PHP 70%</h5>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                <h5>C# 60%</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- EXPERIENCES -->
+        <section id="experiences">
+            <div class="container">
+                <div class="traitblanc"></div>
+                <div class="heading">
+                    <h2>Expériences professionelles</h2>
+                </div>
+                <ul class="timeline">
+                    <!-- AUCHAN CDI -->
+                    <li>
+                        <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
+                        <div class="timeline-panel-container">
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3>Auchan</h3>
+                                    <h4>Conseillère Multimédia / Librairie</h4>
+                                    <p class="text-muted"><small class="glyphicon glyphicon-time"> 09/2018-03/2019</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Mise en rayon </p>
+                                    <p>Conseil technique</p>
+                                    <p>Mise en place des nouveaux produits</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- FNAC -->
+                    <li>
+                        <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
+                        <div class="timeline-panel-container-inverted">
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3>Fnac</h3>
+                                    <h4>Caissière</h4>
+                                    <p class="text-muted"><small class="glyphicon glyphicon-time"> 12/2017-01/2018</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Utilisation de la caisse </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- AUCHAN CONTRAT ETUDIANT -->
+                    <li>
+                        <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
+                        <div class="timeline-panel-container">
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3>Auchan</h3>
+                                    <h4>[Contrat Etudiant] Conseillère Multimédia</h4>
+                                    <p class="text-muted"><small class="glyphicon glyphicon-time"> 04/2017-08/2017</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Mise en rayon </p>
+                                    <p>Conseil technique</p>
+                                    <p>Mise en place des nouveaux produits</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- DELTA SYSTEMES STAGE -->
+                    <li>
+                        <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
+                        <div class="timeline-panel-container-inverted">
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h3>Delta Systèmes</h3>
+                                    <h4>Technicien Informatique</h4>
+                                    <p class="text-muted"><small class="glyphicon glyphicon-time"> 04/2017-06/2017</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Hotline </p>
+                                    <p>Helpdesk</p>
+                                    <p>Prise en main à distance</p>
+                                    <p>Installation et configuration sur site de postes et serveurs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- FORMATIONS -->
+        <section id="formations">
+            <div class="container">
+                <div class="heading">
+                    <div class="traitcouleur"></div>
+                    <h2>FORMATIONS</h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="formations-block">
+                            <h5>2013</h5>
+                            <span class="glyphicon glyphicon-education"></span>
+                            <h3>Lycée Déodat de Severac - Céret</h3>
+                            <h4>Baccalauréat Scientifique</h4>
+                            <div class="traitcouleur"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                         <div class="formations-block">
+                            <h5>2014-2017</h5>
+                            <span class="glyphicon glyphicon-education"></span>
+                            <h3>Université Via Domitia - Perpignan</h3>
+                            <h4>Licence Pro. Administrateur Systèmes</h4>
+                            <div class="traitcouleur"></div>
+                        </div>
+                    </div>
+                
+                </div>
+            
+            </div>
+        </section>
+        
+        <!-- PORTFOLIO -->
+        <section id="portfolio">
+            <div class="container">
+                <div class="traitblanc"></div>
+                <div class="heading">
+                    <h2>Portfolio</h2>
+                </div>
+                <div id="monCarousel" class="carousel slide text-center" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#monCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#monCarousel" data-slide-to="1"></li>
+                        <li data-target="#monCarousel" data-slide-to="2"></li>
+                        <li data-target="#monCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="images/Voyage.jpg">
+                            <div class="langages"><h4>HTML / CSS</h4></div>
+                            <div class="carousel-caption">
+                                <h3>Site de Voyage</h3>
+                                <a class="button2" href="voyage.html">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/chats.jpg">
+                            <div class="langages"><h4>HTML / CSS / JQuery</h4></div>
+                            <div class="carousel-caption">
+                                <h3>Site interactif</h3>
+                                <a class="button2" href="chats.html" type="button">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/snake.jpg">
+                            <div class="langages"><h4>Javascript</h4></div>
+                            <div class="carousel-caption">
+                                <h3>Jeu du Snake</h3>
+                                <a class="button2" href="snake.html" type="button">Voir le projet</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="images/toysrus.jpg">
+                            <div class="langages"><h4>HTML / CSS / PHP / SQL</h4></div>
+                            <div class="carousel-caption">
+                                <h3>Toysrus</h3>
+                                <!-- ATTENTION Lien en local ici -->
+                                <a class="button2" href="http://local.toysrus.net/list?page=3&tri=-1&brand=-1" type="button">Voir le projet</a>
+                            </div>
+                        </div>
+                        <a href="#monCarousel" class="left carousel-control" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        
+                        <a href="#monCarousel" class="right carousel-control" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="text-center">
+            <a href="#about">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+            <h5> 2017 Bisiaux Alexia</h5>
+        </footer>
+        <script src="js/scriptchart.js"></script>
+    </body>
+</html>

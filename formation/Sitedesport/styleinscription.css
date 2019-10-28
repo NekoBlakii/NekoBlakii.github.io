@@ -1,0 +1,132 @@
+/* RESET CSS*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* TOPBAR */
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.topbar {
+    display: flex;
+    width: 100%;
+    background-color: #0d1217;
+    align-items: center;
+    position: relative;
+}
+
+    .topbar h1 {
+        color: #fff;
+        width: 100%;
+    }
+
+ul {
+    display: flex;
+}
+
+    ul li {
+        padding: 20px 20px;
+    }
+
+    /* RESEAUX */
+    ul li a > i {
+        font-size: 3em;
+        color: #fc3640;
+    }
+
+    ul li a:hover i {
+        color: #c8030c;
+    }
+
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1; 
+}
+
+main h1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 50px;
+}
+
+.inscription  {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+    .inscription div {
+        padding: 15px;
+    }
+
+    .inscription form .btn-submit {
+        text-align: center;
+    }
+
+    .inscription form input[type="submit"] {
+        text-align: center;
+        padding: 15px;
+        background-color: #fc3640;
+        color : #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        border : none;
+    }
+
+    .inscription form input[type="submit"]:hover {
+        background-color: #c8030c;
+    }
+
+    .inscription input, .inscription label {
+        display:block; 
+        width:300px; 
+        float:left;
+    }
+
+    .inscription label {
+        padding-bottom: 20px;
+    }
+
+
+
+
+/* FOOTER */
+footer {
+    display: flex;
+    background-color: #0d1217;
+    color: #fff;
+    padding : 20px;
+    width: 100%;
+    justify-content: center;
+}
