@@ -123,6 +123,7 @@ section .heading h2
 
 #about .heading h3
 {
+    font-size: 36px;
     color: #000;
 }
 
@@ -174,6 +175,12 @@ section .heading h2
 {
     text-shadow: 1px 1px #000;
 }
+
+.transform {
+    transition: 3s;
+    transform: scale(0.8) translate(-100%, 0);
+}
+
 
 /* EXPERIENCES */
 #experiences
