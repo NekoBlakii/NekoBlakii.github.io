@@ -4,7 +4,7 @@ var myChart = new Chart(ctx, {
   data: {
     labels: ['HTML', 'CSS', 'JAVASCRIPT', 'SQL', 'PHP', 'C#'],
     datasets: [{
-      label: '# of Tomatoes',
+      label: '#skills',
       data: [10, 10, 10, 10, 10, 10],
       backgroundColor: [
         'rgba(255, 99, 132, 0.5)',
@@ -28,5 +28,8 @@ var myChart = new Chart(ctx, {
   options: {
    	cutoutPercentage: 40,
     responsive: false,
+    legend: {
+      display: false,
+    }
   }
 });
