@@ -181,6 +181,15 @@ section .heading h2
     transform:  translate(-293px, 0);
 }
 
+#skills .row {
+    position: relative;
+}
+
+#imgClick{
+    width: 100px;
+    top : 150px;
+}
+
 #skillDescription{
     font-size: 30px;
 }

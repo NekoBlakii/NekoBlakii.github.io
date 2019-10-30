@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function(){
       tooltips: { 
         enabled: false
       },
-      events: ['click'],
       animation: {
         duration: 800,
         onProgress: function () {
@@ -107,14 +106,23 @@ document.addEventListener('DOMContentLoaded', function(){
         else{
           let wWidth = window.innerWidth; //Permet de récuperer la largeur du navigateur au moment où on clique
           var isSmall = true;
+          let imgClick = document.getElementById('imgClick');
           if(wWidth > 992)
           {
             c.classList.add('transform');
+            imgClick.classList.add('transform');
             isSmall = false;
           }
           printLabel(skill,isSmall);
           firstClick = true;
         }
+      },
+      hover : {
+        onHover: function(e,item) {
+          var point = this.getElementAtEvent(e);
+          if (point.length) e.target.style.cursor = 'pointer';
+          else e.target.style.cursor = 'default';
+       }
       }
     };
 
