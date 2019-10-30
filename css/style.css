@@ -185,6 +185,26 @@ section .heading h2
     position: relative;
 }
 
+svg {
+    width: 80px;
+    height:80px;
+    transition-duration: 0.5s;
+    fill : #333;
+}
+
+.logo-html > svg:hover{
+    fill : #e34f26
+}
+
+
+
+#skills #skillDescription{
+    display: flex;
+    height: 400px;
+    justify-content: space-around;
+    align-content: center;
+}
+
 #imgClick{
     width: 100px;
     top : 150px;
