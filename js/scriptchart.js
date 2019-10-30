@@ -1,8 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', function(){
 
-  var isHover = false;
   var hasBeenAnimated = false;
+  var firstClick = false;
+
 
   var data = {
       datasets: [{
@@ -98,8 +99,22 @@ document.addEventListener('DOMContentLoaded', function(){
       },
       onClick: function(event,item){
         var skill = data.labels[item[0]._index];
-        c.classList.add('transform');
-        printLabel(skill);
+        
+        if(firstClick)
+        {
+          updateLabel(skill);
+        }
+        else{
+          let wWidth = window.innerWidth; //Permet de récuperer la largeur du navigateur au moment où on clique
+          var isSmall = true;
+          if(wWidth > 992)
+          {
+            c.classList.add('transform');
+            isSmall = false;
+          }
+          printLabel(skill,isSmall);
+          firstClick = true;
+        }
       }
     };
 
@@ -113,32 +128,36 @@ document.addEventListener('DOMContentLoaded', function(){
     options: pieOptions
   });
 
-  const content = document.getElementById('skillDescription');
+  const colDescription = document.getElementById('colDescription');
+  const colChart = document.getElementById('colChart');
 
 
-  function printLabel(selectLabel){
+  function printLabel(selectLabel,isSmall){
+    if(isSmall)
+    {
+      colChart.classList.remove('col-md-12');
+      c.classList.remove('transform');
+      colChart.classList.add('col-md-6');
+      colDescription.innerHTML = '<div class="col-md-6"><div id="skillDescription"></div></div>';
+      let content = document.getElementById('skillDescription');
+      content.innerHTML = selectLabel;
+    }else{
+      setTimeout(function(){
+        colChart.classList.remove('col-md-12');
+        c.classList.remove('center');
+        c.classList.remove('transform');
+        colChart.classList.add('col-md-6');
+        colDescription.innerHTML = '<div class="col-md-6"><div id="skillDescription"></div></div>';
+        let content = document.getElementById('skillDescription');
+        content.innerHTML = selectLabel;
+      }, 3000);
+    }
+    
+  }
+
+  function updateLabel(selectLabel){
+    let content = document.getElementById('skillDescription');
     content.innerHTML = selectLabel;
-    isHover = false;
-  }
-
-  function animationLeftChart()
-  {
-    c.animate([
-      { transform: 'translateX(0px)' }, 
-      { transform: 'translateX(-300px)' }
-    ], { 
-      duration: 1000
-    })
-  }
-
-  function animationCenterChart()
-  {
-    c.animate([
-      { transform: 'translateX(0px)' }, 
-      { transform: 'translateX(300px)' }
-    ], { 
-      duration: 1000
-    })
   }
 
 });

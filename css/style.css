@@ -178,9 +178,29 @@ section .heading h2
 
 .transform {
     transition: 3s;
-    transform: scale(0.8) translate(-100%, 0);
+    transform:  translate(-370px, 0);
 }
 
+#skillDescription{
+    font-size: 30px;
+}
+
+#colChart {
+    position: relative;
+    height: 400px;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.absolute {
+    position: absolute;
+    z-index: 1;
+}
 
 /* EXPERIENCES */
 #experiences
