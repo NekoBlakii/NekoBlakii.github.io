@@ -144,13 +144,12 @@ document.addEventListener('DOMContentLoaded', function(){
     }else{
       setTimeout(function(){
         colChart.classList.remove('col-md-12');
-        c.classList.remove('center');
         c.classList.remove('transform');
         colChart.classList.add('col-md-6');
         colDescription.innerHTML = '<div class="col-md-6"><div id="skillDescription"></div></div>';
         let content = document.getElementById('skillDescription');
         content.innerHTML = selectLabel;
-      }, 3000);
+      }, 2000);
     }
     
   }

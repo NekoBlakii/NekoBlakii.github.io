@@ -177,8 +177,8 @@ section .heading h2
 }
 
 .transform {
-    transition: 3s;
-    transform:  translate(-370px, 0);
+    transition: 2s;
+    transform:  translate(-293px, 0);
 }
 
 #skillDescription{
