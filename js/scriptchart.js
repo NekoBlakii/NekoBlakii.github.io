@@ -160,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function(){
       setTimeout(function(){
         colChart.classList.remove('col-md-12');
         c.classList.remove('transform');
+        imgClick.classList.remove('transform');
         colChart.classList.add('col-md-6');
         colDescription.innerHTML = '<div id="col-right" class="col-md-6"><div id="skillDescription"></div></div>';
         let content = document.getElementById('skillDescription');
