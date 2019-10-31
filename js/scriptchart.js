@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function(){
   var skills = [['HTML','CSS','Javascript','Bootstrap'],['PHP','MySql'],['Unity','C#']];
   const imgClick = document.getElementById('imgClick');
 
+  var font = "18px Lato";
+
   var data = {
       datasets: [{
         data: [10,10,10],
@@ -39,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function(){
           if(hasBeenAnimated)
           {
             var ctx = this.chart.ctx;
-            ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
+            ctx.font = font;
+            //ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
             ctx.textAlign = 'center';
             ctx.textBaseline = 'bottom';
             
@@ -53,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 var x = mid_radius * Math.cos(mid_angle);
                 var y = mid_radius * Math.sin(mid_angle);
                 ctx.fillStyle = '#fff';
-                ctx.font = "15px Arial";
+                ctx.font = font;
                 var val = dataset.labels[i];
                 if(val != 0) {
                   ctx.fillText(dataset.labels[i], model.x + x, model.y + y);
@@ -68,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function(){
             if(hasBeenAnimated)
             {
               var ctx = this.chart.ctx;
-              ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
+              ctx.font = font;
               ctx.textAlign = 'center';
               ctx.textBaseline = 'bottom';
               
@@ -82,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function(){
                   var x = mid_radius * Math.cos(mid_angle);
                   var y = mid_radius * Math.sin(mid_angle);
                   ctx.fillStyle = '#fff';
-                  ctx.font = "15px Arial";
+                  ctx.font = font;
                   var val = dataset.labels[i];
                   if(val != 0) {
                     ctx.fillText(dataset.labels[i], model.x + x, model.y + y);
