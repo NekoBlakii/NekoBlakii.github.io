@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
   {
     c.setAttribute('width','300vh');
     c.setAttribute('height','300vw');
+    c.classList.add('chart-small');
   }
 
   var data = {
