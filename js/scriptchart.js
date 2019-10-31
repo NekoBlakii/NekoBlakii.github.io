@@ -1,10 +1,21 @@
 
 document.addEventListener('DOMContentLoaded', function(){
 
+
+  
+
   var hasBeenAnimated = false;
   var firstClick = false;
   var skills = [['HTML','CSS','Javascript','Bootstrap'],['PHP','MySql'],['Unity','C#']];
   const imgClick = document.getElementById('imgClick');
+  const c = document.getElementById('myChart');
+  const ctx = c.getContext("2d");
+  var wWidth = window.innerWidth; //Permet de récuperer la largeur du navigateur au moment où on clique
+
+  if(wWidth < 992)
+  {
+    c.classList.add('chart-small');
+  }
 
   var font = "bold 18px Lato";
 
@@ -111,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function(){
           updateLabel(skill,index);
         }
         else{
-          let wWidth = window.innerWidth; //Permet de récuperer la largeur du navigateur au moment où on clique
           var isSmall = true;
           
           if(wWidth > 992)
@@ -132,10 +142,6 @@ document.addEventListener('DOMContentLoaded', function(){
        }
       }
     };
-
-
-  const c = document.getElementById('myChart');
-  const ctx = c.getContext("2d");
 
   const myChart = new Chart(ctx, {
     type: 'pie', 
