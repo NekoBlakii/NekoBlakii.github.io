@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', function(){
   var wWidth = window.innerWidth; //Permet de récuperer la largeur du navigateur au moment où on clique
 
   var font = "bold 18px Lato";
+  if(wWidth < 992)
+  {
+    c.setAttribute('width','300vh');
+    c.setAttribute('height','300vw');
+  }
 
   var data = {
       datasets: [{
@@ -35,12 +40,6 @@ document.addEventListener('DOMContentLoaded', function(){
       ]
     };
 
-  if(wWidth < 992)
-  {
-    c.setAttribute('width','200vh');
-    c.setAttribute('height','200vw');
-  }
-  else {
       var pieOptions = {
         cutoutPercentage: 40,
         responsive: false,
@@ -176,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }, 2000);
       }
     }
-  }
+  
 
   function updateLabel(selectLabel,index){
     let content = document.getElementById('skillDescription');
