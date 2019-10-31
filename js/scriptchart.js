@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const c = document.getElementById('myChart');
   const ctx = c.getContext("2d");
   const colDescription = document.getElementById('colDescription');
+  const skillDescription = document.getElementById('skillDescription');
   const colChart = document.getElementById('colChart');
   var wWidth = window.innerWidth; //Permet de récuperer la largeur du navigateur au moment où on clique
 

@@ -399,6 +399,7 @@ section .heading h2
 
 .timeline-heading h4
 {
+    font-size: 16px;
     color: var(--couleur-generale);
 }
 
