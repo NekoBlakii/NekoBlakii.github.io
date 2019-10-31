@@ -6,15 +6,15 @@ document.addEventListener('DOMContentLoaded', function(){
   var skills = [['HTML','CSS','Javascript','Bootstrap'],['PHP','MySql'],['Unity','C#']];
   const imgClick = document.getElementById('imgClick');
 
-  var font = "18px Lato";
+  var font = "bold 18px Lato";
 
   var data = {
       datasets: [{
         data: [10,10,10],
         backgroundColor: [
-          "#2e8ece",
-          "#a66bbe",
-          "#e67e22"
+          "#EA5A3E",
+          "#DA2B27",
+          "#C12600"
         ],
         label: 'Mes compétences',
         labels: ['Front-end', 'Back-end', 'Extra'] 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 mid_angle = start_angle + (end_angle - start_angle)/2;
                 var x = mid_radius * Math.cos(mid_angle);
                 var y = mid_radius * Math.sin(mid_angle);
-                ctx.fillStyle = '#fff';
+                ctx.fillStyle = '#222629';
                 ctx.font = font;
                 var val = dataset.labels[i];
                 if(val != 0) {
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function(){
                   mid_angle = start_angle + (end_angle - start_angle)/2;
                   var x = mid_radius * Math.cos(mid_angle);
                   var y = mid_radius * Math.sin(mid_angle);
-                  ctx.fillStyle = '#fff';
+                  ctx.fillStyle = '#222629';
                   ctx.font = font;
                   var val = dataset.labels[i];
                   if(val != 0) {

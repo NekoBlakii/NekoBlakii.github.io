@@ -2,10 +2,11 @@
 
 body
 {
-    font-family: 'Lato', sans-serif;
-    --couleur-generale :  #FF8753; 
+    font-family: 'Lato', sans-serif; 
     --couleur-generale :  #37658b; 
-    --couleur-sombre :  #22415a; 
+    --couleur-generale :  #222629; 
+    --couleur-sombre :  #222629; 
+    --couleur-sombre :  #FFF; 
 }
 
 h1,h2,h3,h4,h5,h6,p
@@ -124,7 +125,7 @@ section .heading h2
 #about .heading h3
 {
     font-size: 36px;
-    color: #000;
+    color: #C96567;
 }
 
 .button1
@@ -157,23 +158,6 @@ section .heading h2
 #skills .heading h2
 {
     color: var(--couleur-generale);
-}
-
-#skills .progress /* barre grise */
-{
-    height: 40px;
-    margin: 30px 20px;
-    background: #ddd;
-}
-
-#skills .progress-bar
-{
-    background: var(--couleur-generale);
-}
-
-#skills .progress h5
-{
-    text-shadow: 1px 1px #000;
 }
 
 .transform {
