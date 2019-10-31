@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function(){
 
 
+  $('#myModal').modal('show');
   
 
   var hasBeenAnimated = false;
@@ -10,12 +11,9 @@ document.addEventListener('DOMContentLoaded', function(){
   const imgClick = document.getElementById('imgClick');
   const c = document.getElementById('myChart');
   const ctx = c.getContext("2d");
+  const colDescription = document.getElementById('colDescription');
+  const colChart = document.getElementById('colChart');
   var wWidth = window.innerWidth; //Permet de récuperer la largeur du navigateur au moment où on clique
-
-  if(wWidth < 992)
-  {
-    c.classList.add('chart-small');
-  }
 
   var font = "bold 18px Lato";
 
@@ -37,56 +35,28 @@ document.addEventListener('DOMContentLoaded', function(){
       ]
     };
 
-    var pieOptions = {
-      cutoutPercentage: 40,
-      responsive: false,
-      legend: {
-        display: false,
-      },
-      tooltips: { 
-        enabled: false
-      },
-      animation: {
-        duration: 800,
-        onProgress: function () {
-          if(hasBeenAnimated)
-          {
-            var ctx = this.chart.ctx;
-            ctx.font = font;
-            //ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'bottom';
-            
-            this.data.datasets.forEach(function (dataset) {
-              for (var i = 0; i < dataset.data.length; i++) {
-                var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
-                mid_radius = model.innerRadius + (model.outerRadius - model.innerRadius)/2,
-                start_angle = model.startAngle,
-                end_angle = model.endAngle,
-                mid_angle = start_angle + (end_angle - start_angle)/2;
-                var x = mid_radius * Math.cos(mid_angle);
-                var y = mid_radius * Math.sin(mid_angle);
-                ctx.fillStyle = '#222629';
-                ctx.font = font;
-                if(i==2)
-                {
-                  ctx.fillStyle = '#FFF';
-                }
-                var val = dataset.labels[i];
-                if(val != 0) {
-                  ctx.fillText(dataset.labels[i], model.x + x, model.y + y);
-                }
-              }
-            });
-          }
-          
-          },
-          onComplete: function(){
-            hasBeenAnimated = true;
+
+  if(wWidth < 992)
+  {
+    
+  }else {
+      var pieOptions = {
+        cutoutPercentage: 40,
+        responsive: false,
+        legend: {
+          display: false,
+        },
+        tooltips: { 
+          enabled: false
+        },
+        animation: {
+          duration: 800,
+          onProgress: function () {
             if(hasBeenAnimated)
             {
               var ctx = this.chart.ctx;
               ctx.font = font;
+              //ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontFamily, 'normal', Chart.defaults.global.defaultFontFamily);
               ctx.textAlign = 'center';
               ctx.textBaseline = 'bottom';
               
@@ -112,69 +82,104 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
               });
             }
-          },
-      },
-      onClick: function(event,item){
-        var skill = data.labels[item[0]._index];
-        var index = item[0]._index;
-        if(firstClick)
-        {
-          updateLabel(skill,index);
-        }
-        else{
-          var isSmall = true;
-          
-          if(wWidth > 992)
+            
+            },
+            onComplete: function(){
+              hasBeenAnimated = true;
+              if(hasBeenAnimated)
+              {
+                var ctx = this.chart.ctx;
+                ctx.font = font;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'bottom';
+                
+                this.data.datasets.forEach(function (dataset) {
+                  for (var i = 0; i < dataset.data.length; i++) {
+                    var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+                    mid_radius = model.innerRadius + (model.outerRadius - model.innerRadius)/2,
+                    start_angle = model.startAngle,
+                    end_angle = model.endAngle,
+                    mid_angle = start_angle + (end_angle - start_angle)/2;
+                    var x = mid_radius * Math.cos(mid_angle);
+                    var y = mid_radius * Math.sin(mid_angle);
+                    ctx.fillStyle = '#222629';
+                    ctx.font = font;
+                    if(i==2)
+                    {
+                      ctx.fillStyle = '#FFF';
+                    }
+                    var val = dataset.labels[i];
+                    if(val != 0) {
+                      ctx.fillText(dataset.labels[i], model.x + x, model.y + y);
+                    }
+                  }
+                });
+              }
+            },
+        },
+        onClick: function(event,item){
+          var skill = data.labels[item[0]._index];
+          var index = item[0]._index;
+          if(firstClick)
           {
-            c.classList.add('transform');
-            imgClick.classList.add('transform');
-            isSmall = false;
+            updateLabel(skill,index);
           }
-          printLabel(skill,index,isSmall);
-          firstClick = true;
+          else{
+            var isSmall = true;
+            
+            if(wWidth > 992)
+            {
+              c.classList.add('transform');
+              imgClick.classList.add('transform');
+              isSmall = false;
+            }
+            printLabel(skill,index,isSmall);
+            firstClick = true;
+          }
+        },
+        hover : {
+          onHover: function(e) {
+            var point = this.getElementAtEvent(e);
+            if (point.length) e.target.style.cursor = 'pointer';
+            else e.target.style.cursor = 'default';
         }
-      },
-      hover : {
-        onHover: function(e) {
-          var point = this.getElementAtEvent(e);
-          if (point.length) e.target.style.cursor = 'pointer';
-          else e.target.style.cursor = 'default';
-       }
-      }
-    };
+        }
+      };
 
-  const myChart = new Chart(ctx, {
-    type: 'pie', 
-    data: data,
-    options: pieOptions
-  });
+    const myChart = new Chart(ctx, {
+      type: 'pie', 
+      data: data,
+      options: pieOptions
+    });
 
-  const colDescription = document.getElementById('colDescription');
-  const colChart = document.getElementById('colChart');
-
-  function printLabel(selectLabel,index,isSmall){
-    if(isSmall)
-    {
-      colChart.classList.remove('col-md-12');
-      c.classList.remove('transform');
-      colChart.classList.add('col-md-6');
-      colDescription.innerHTML = '<div id="col-right" class="col-md-6"><div id="skillDescription"></div></div>';
-      let content = document.getElementById('skillDescription');
-      content.innerHTML = selectLabel;
-      addHoverCss('.logo','hvr-grow');
-    }else{
-      setTimeout(function(){
+    function printLabel(selectLabel,index,isSmall){
+      if(isSmall)
+      {
         colChart.classList.remove('col-md-12');
         c.classList.remove('transform');
-        imgClick.classList.remove('transform');
         colChart.classList.add('col-md-6');
         colDescription.innerHTML = '<div id="col-right" class="col-md-6"><div id="skillDescription"></div></div>';
         let content = document.getElementById('skillDescription');
         content.innerHTML = selectLabel;
         addHoverCss('.logo','hvr-grow');
-      }, 2000);
+      }else{
+        setTimeout(function(){
+          colChart.classList.remove('col-md-12');
+          c.classList.remove('transform');
+          imgClick.classList.remove('transform');
+          colChart.classList.add('col-md-6');
+          colDescription.innerHTML = '<div id="col-right" class="col-md-6"><div id="skillDescription"></div></div>';
+          let content = document.getElementById('skillDescription');
+          content.innerHTML = selectLabel;
+          addHoverCss('.logo','hvr-grow');
+        }, 2000);
+      }
     }
   }
+
+  
+
+  
 
   function updateLabel(selectLabel,index){
     let content = document.getElementById('skillDescription');
