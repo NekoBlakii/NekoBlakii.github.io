@@ -119,6 +119,8 @@ section .heading h2
 
 .profile-picture
 {
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin: 0 auto;
     float: none;
@@ -126,6 +128,19 @@ section .heading h2
 
 .profile-picture > img {
     width: 50%;
+}
+
+
+.logo-rs svg {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    transition-duration: 0.5s;
+    fill : var(--couleur-flash);
+}
+
+.logo-rs svg:hover {
+    fill : var(--couleur-fond);
 }
 
 #about .heading h1
@@ -182,7 +197,7 @@ section .heading h2
     position: relative;
 }
 
-svg {
+.logo svg {
     width: 80px;
     height:80px;
     transition-duration: 0.5s;
