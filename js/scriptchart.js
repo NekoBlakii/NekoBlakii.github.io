@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', function(){
   const ctx = c.getContext("2d");
   var wWidth = window.innerWidth; //Permet de récuperer la largeur du navigateur au moment où on clique
 
+  if(wWidth < 992)
+  {
+    c.classList.add('chart-small');
+  }
 
   var font = "bold 18px Lato";
 
