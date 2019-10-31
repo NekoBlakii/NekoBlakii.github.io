@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function(){
       datasets: [{
         data: [10,10,10],
         backgroundColor: [
-          "#EA5A3E",
-          "#DA2B27",
-          "#C12600"
+          "#f5f5f5",
+          "#C96567",
+          "#222629"
         ],
         label: 'Mes compétences',
         labels: ['Front-end', 'Back-end', 'Extra'] 
@@ -57,6 +57,10 @@ document.addEventListener('DOMContentLoaded', function(){
                 var y = mid_radius * Math.sin(mid_angle);
                 ctx.fillStyle = '#222629';
                 ctx.font = font;
+                if(i==2)
+                {
+                  ctx.fillStyle = '#FFF';
+                }
                 var val = dataset.labels[i];
                 if(val != 0) {
                   ctx.fillText(dataset.labels[i], model.x + x, model.y + y);
@@ -86,6 +90,10 @@ document.addEventListener('DOMContentLoaded', function(){
                   var y = mid_radius * Math.sin(mid_angle);
                   ctx.fillStyle = '#222629';
                   ctx.font = font;
+                  if(i==2)
+                  {
+                    ctx.fillStyle = '#FFF';
+                  }
                   var val = dataset.labels[i];
                   if(val != 0) {
                     ctx.fillText(dataset.labels[i], model.x + x, model.y + y);

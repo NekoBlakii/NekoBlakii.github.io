@@ -7,6 +7,8 @@ body
     --couleur-generale :  #222629; 
     --couleur-sombre :  #222629; 
     --couleur-sombre :  #FFF; 
+    --couleur-fond : hsl(0, 0%, 91%);
+    --couleur-flash : #C96567;
 }
 
 h1,h2,h3,h4,h5,h6,p
@@ -27,7 +29,7 @@ ul
 
 section
 {
-    padding: 45px 0 45px 0;
+    padding: 0 0 100px 0;
 }
 
 section .heading
@@ -55,6 +57,13 @@ section .heading h2
     height: 2px;
     background: #fff;
     margin: 0 auto;
+}
+
+.section-head{
+    top: 10px;
+    background: var(--couleur-flash);
+    padding : 25px 0 0 0;
+    margin-bottom : 50px;
 }
 
 /* MENU */
@@ -115,6 +124,10 @@ section .heading h2
     float: none;
 }
 
+.profile-picture > img {
+    width: 50%;
+}
+
 #about .heading h1
 {
     color: #fff;
@@ -125,7 +138,7 @@ section .heading h2
 #about .heading h3
 {
     font-size: 36px;
-    color: #C96567;
+    color: var(--couleur-flash);
 }
 
 .button1
@@ -152,7 +165,7 @@ section .heading h2
 
 #skills
 {
-    background: #fff;
+    background: var(--couleur-fond);
 }
 
 #skills .heading h2
@@ -265,13 +278,12 @@ svg {
 /* EXPERIENCES */
 #experiences
 {
-    background: var(--couleur-generale);
+    background: var(--couleur-fond);
 }
 
 #experiences .heading h2
 {
-    color: #fff;
-    text-shadow: 1px 1px #000;
+    color: var(--couleur-generale);
 }
 
 .timeline
@@ -287,7 +299,7 @@ svg {
     position: absolute;
     content: " ";
     width: 5px;
-    background: var(--couleur-sombre);
+    background: var(--couleur-generale);
     left: 50%;
     margin-left: -2.5px;
 }
@@ -313,16 +325,20 @@ svg {
 .timeline-badge
 {
     color: var(--couleur-sombre);
-    width: 50px;
-    height: 32px;
-    font-size: 30px;
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
     text-align: center;
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 50%;
-    margin-left: -25px;
-    background-color: var(--couleur-generale);
-    border-radius: 50%;
+    margin-left: -35px;
+    background-color: var(--couleur-flash);
+    border-radius: 10%;
+}
+
+.timeline-badge > span {
+    top: 15px;
 }
 
 .timeline-panel-container
@@ -376,7 +392,7 @@ svg {
 /* FORMATIONS */
 #formations
 {
-    background: #fff;
+    background: var(--couleur-fond);
 }
 
 #formations .heading h2
@@ -398,42 +414,39 @@ svg {
 
 .formations-block h5
 {
-    color: #000;
-    font-size: 15px;
+    color: var(--couleur-sombre);
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
 .formations-block .glyphicon
 {
     font-size: 40px;
-    color: #fff;
+    color: var(--couleur-flash);
 }
 
 .formations-block h3
 {
-    color: #fff;
+    color: var(--couleur-flash);
     text-shadow: 1px 1px #000;
 }
 
 .formations-block h4
 {
-    color: #000;
+    color: var(--couleur-sombre);
 }
 
 /* PORTFOLIO */
 
 #portfolio
 {
-    background: var(--couleur-generale);
+    background: var(--couleur-fond);
 }
 
 #portfolio .heading h2
 {
-    color : #fff;
-    text-shadow: 1px 1px #000;
+    color: var(--couleur-generale);
 }
-
-
 
 .carousel-control.left,.carousel-control.right
 {
@@ -474,9 +487,9 @@ svg {
 {
     font-weight: bold;
     text-transform: uppercase;
-    color : #fff;
-    background-color: var(--couleur-sombre);
-    border: 1px solid #fff;
+    color : var(--couleur-sombre);
+    background-color: var(--couleur-generale);
+    border: 1px solid var(--couleur-sombre);
     border-radius: 7px;
     display: inline-block;
     margin-top: 20px;
@@ -486,9 +499,10 @@ svg {
 
 .button2:hover
 {
-    background-color: var(--couleur-generale);
+    background-color: #fff;
+    border: 1px solid var(--couleur-generale);
     text-decoration: none;
-    color: #000;
+    color: var(--couleur-generale);
 }
 
 .langages
@@ -496,8 +510,8 @@ svg {
     font-weight: bold;
     text-transform: uppercase;
     color : #fff;
-    background-color: var(--couleur-sombre);
-    border-bottom: 6px solid var(--couleur-generale);
+    background-color: var(--couleur-generale);
+    border-bottom: 6px solid var(--couleur-flash);
     position: absolute;
     top: 0px;
     padding: 10px 30px; /* espace entre le bord et le texte */
@@ -507,7 +521,7 @@ svg {
 /* FOOTER */
 footer
 {
-    background: var(--couleur-sombre);
+    background: var(--couleur-generale);
     padding: 20px 0 40px;
 }
 
