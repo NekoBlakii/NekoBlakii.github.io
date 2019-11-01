@@ -356,8 +356,13 @@ section .heading h2
     border-radius: 10%;
 }
 
-.timeline-badge > span {
-    top: 15px;
+.timeline-badge > .glyphicon-briefcase {
+    top: 13px;
+}
+
+.timeline-badge > .glyphicon-star {
+    top: 12px;
+    left: 1px;
 }
 
 .timeline-panel-container
