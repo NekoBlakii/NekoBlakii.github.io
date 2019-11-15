@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function(){
         data: [10,10,10],
         backgroundColor: [
           "#f5f5f5",
-          "#C96567",
-          "#222629"
+          "#FFCF79",
+          "#292c2e"
         ],
         label: 'Mes compétences',
         labels: ['Front-end', 'Back-end', 'Extra'] 
@@ -201,17 +201,5 @@ document.addEventListener('DOMContentLoaded', function(){
         this.classList.add('hvr-grow');
       })
   }
-/*
-  var formation = document.querySelectorAll('.formations-block');
-  for(var i = 0;i< formation.length;i++)
-  {
-    formation[i].addEventListener('mouseenter',function(e){
-        this.classList.add('hvr-grow');
-    })
-    formation[i].addEventListener('mouseleave',function(e){
-        this.classList.remove('hvr-grow');
-    })
-  }
-*/
 
 });

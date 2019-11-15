@@ -3,12 +3,11 @@
 body
 {
     font-family: 'Lato', sans-serif; 
-    --couleur-generale :  #37658b; 
-    --couleur-generale :  #222629; 
-    --couleur-sombre :  #222629; 
+    --couleur-generale :  #292c2e; 
     --couleur-sombre :  #FFF; 
     --couleur-fond : hsl(0, 0%, 91%);
     --couleur-flash : #C96567;
+    --couleur-flash : #FFD376;
 }
 
 h1,h2,h3,h4,h5,h6,p
@@ -113,6 +112,7 @@ section .heading h2
 
 #about
 {
+    padding-bottom : 0;
     padding-top: 100px;
     background: var(--couleur-generale);
 }
@@ -127,7 +127,7 @@ section .heading h2
 }
 
 .profile-picture > img {
-    width: 50%;
+    width: 35%;
 }
 
 
@@ -262,6 +262,18 @@ section .heading h2
 #imgClick{
     width: 100px;
     top : 150px;
+    animation-name : clignote;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes clignote{
+    0% {opacity: 1;} 
+    25% {opacity: 0.5;} 
+    50% {opacity: 0.25;} 
+    75% {opacity: 0.5;} 
+    100% {opacity: 1;} 
 }
 
 #skillDescription{

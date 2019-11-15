@@ -33,9 +33,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#about">A Propos</a></li>
                         <li><a href="#skills">Compétences</a></li>
-                        <li><a href="#experiences">Expériences</a></li>
-                        <li><a href="#formations">Formations</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#formations">Formations</a></li>
+                        <li><a href="#experiences">Expériences</a></li>
                     </ul>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="heading">
                 <h1>Alexia Bisiaux</h1>
                 <h3>Développeuse web</h3>
-                <!--<a href="docs/Technicien%20informatique%20BISIAUX%20ALEXIA.pdf" class="button1">Télécharger mon CV</a>-->
+                <a href="docs/Technicien%20informatique%20BISIAUX%20ALEXIA.pdf" class="button1">CV Papier</a>
             </div>
         </section>
         
@@ -78,8 +78,111 @@
             </div>
         </section>
         
-        <!-- EXPERIENCES -->
-        <section id="experiences">
+     <!-- PORTFOLIO -->
+     <section id="portfolio">
+        <div class="section-head">
+            <div class="traitcouleur"></div>
+            <div class="heading">
+                <h2>Portfolio</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div id="monCarousel" class="carousel slide text-center" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#monCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#monCarousel" data-slide-to="1"></li>
+                    <li data-target="#monCarousel" data-slide-to="2"></li>
+                    <li data-target="#monCarousel" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="images/Voyage.jpg">
+                        <div class="langages"><h4>HTML / CSS</h4></div>
+                        <div class="carousel-caption">
+                            <h3>Projet site de voyage</h3>
+                            <a class="button2" href="voyage.html"target="_blank" type="button">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/chats.jpg">
+                        <div class="langages"><h4>HTML / CSS / JQuery</h4></div>
+                        <div class="carousel-caption">
+                            <h3>Projet site interactif</h3>
+                            <a class="button2" href="chats.html" target="_blank" type="button">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/snake.jpg">
+                        <div class="langages"><h4>Javascript</h4></div>
+                        <div class="carousel-caption">
+                            <h3>Projet jeu du snake</h3>
+                            <a class="button2" href="snake.html" target="_blank" type="button">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/toysrus.jpg">
+                        <div class="langages"><h4>HTML / CSS / PHP / SQL</h4></div>
+                        <div class="carousel-caption">
+                            <h3>Projet site ressemblant à Toysrus</h3>
+                            <!-- ATTENTION Lien en local ici -->
+                            <!-- <a class="button2" href="http://local.toysrus.net/list?page=3&tri=-1&brand=-1" target="_blank" type="button">Voir le projet</a> -->
+                        </div>
+                    </div>
+                    <a href="#monCarousel" class="left carousel-control" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    
+                    <a href="#monCarousel" class="right carousel-control" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- FORMATIONS -->
+        <section id="formations">
+                <div class="section-head">
+                    <div class="traitcouleur"></div>
+                    <div class="heading">
+                        <h2>Formations</h2>
+                    </div>
+                 </div>
+                <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="formations-block hvr-grow">
+                            <h5>2013</h5>
+                            <span class="glyphicon glyphicon-education"></span>
+                            <h3>Lycée - Céret</h3>
+                            <h4>Baccalauréat Scientifique Option Physique-Chimie</h4>
+                            <div class="traitcouleur"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                         <div class="formations-block hvr-grow">
+                            <h5>2014-2017</h5>
+                            <span class="glyphicon glyphicon-education"></span>
+                            <h3>UPVD - Perpignan</h3>
+                            <h4>Licence Pro. Administrateur Systèmes</h4>
+                            <div class="traitcouleur"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                         <div class="formations-block hvr-grow">
+                            <h5>2019-2020</h5>
+                            <span class="glyphicon glyphicon-education"></span>
+                            <h3>L'idem - Le Soler</h3>
+                            <h4>Développeuse web et applications mobiles</h4>
+                            <div class="traitcouleur"></div>
+                        </div>
+                    </div>
+                
+                </div>
+            
+            </div>
+        </section>
+        
+          <!-- EXPERIENCES -->
+          <section id="experiences">
             <div class="section-head">
                 <div class="traitcouleur"></div>
                 <div class="heading">
@@ -177,109 +280,6 @@
                         </div>
                     </li>
                 </ul>
-            </div>
-        </section>
-        
-        <!-- FORMATIONS -->
-        <section id="formations">
-                <div class="section-head">
-                    <div class="traitcouleur"></div>
-                    <div class="heading">
-                        <h2>Formations</h2>
-                    </div>
-                 </div>
-                <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="formations-block hvr-grow">
-                            <h5>2013</h5>
-                            <span class="glyphicon glyphicon-education"></span>
-                            <h3>Lycée - Céret</h3>
-                            <h4>Baccalauréat Scientifique Option Physique-Chimie</h4>
-                            <div class="traitcouleur"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-4">
-                         <div class="formations-block hvr-grow">
-                            <h5>2014-2017</h5>
-                            <span class="glyphicon glyphicon-education"></span>
-                            <h3>UPVD - Perpignan</h3>
-                            <h4>Licence Pro. Administrateur Systèmes</h4>
-                            <div class="traitcouleur"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                         <div class="formations-block hvr-grow">
-                            <h5>2019-2020</h5>
-                            <span class="glyphicon glyphicon-education"></span>
-                            <h3>L'idem - Le Soler</h3>
-                            <h4>Développeuse web et applications mobiles</h4>
-                            <div class="traitcouleur"></div>
-                        </div>
-                    </div>
-                
-                </div>
-            
-            </div>
-        </section>
-        
-        <!-- PORTFOLIO -->
-        <section id="portfolio">
-            <div class="section-head">
-                <div class="traitcouleur"></div>
-                <div class="heading">
-                    <h2>Portfolio</h2>
-                </div>
-            </div>
-            <div class="container">
-                <div id="monCarousel" class="carousel slide text-center" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#monCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#monCarousel" data-slide-to="1"></li>
-                        <li data-target="#monCarousel" data-slide-to="2"></li>
-                        <li data-target="#monCarousel" data-slide-to="3"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="images/Voyage.jpg">
-                            <div class="langages"><h4>HTML / CSS</h4></div>
-                            <div class="carousel-caption">
-                                <h3>Projet site de voyage</h3>
-                                <a class="button2" href="voyage.html"target="_blank" type="button">Voir le projet</a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="images/chats.jpg">
-                            <div class="langages"><h4>HTML / CSS / JQuery</h4></div>
-                            <div class="carousel-caption">
-                                <h3>Projet site interactif</h3>
-                                <a class="button2" href="chats.html" target="_blank" type="button">Voir le projet</a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="images/snake.jpg">
-                            <div class="langages"><h4>Javascript</h4></div>
-                            <div class="carousel-caption">
-                                <h3>Projet jeu du snake</h3>
-                                <a class="button2" href="snake.html" target="_blank" type="button">Voir le projet</a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="images/toysrus.jpg">
-                            <div class="langages"><h4>HTML / CSS / PHP / SQL</h4></div>
-                            <div class="carousel-caption">
-                                <h3>Projet site ressemblant à Toysrus</h3>
-                                <!-- ATTENTION Lien en local ici -->
-                                <!-- <a class="button2" href="http://local.toysrus.net/list?page=3&tri=-1&brand=-1" target="_blank" type="button">Voir le projet</a> -->
-                            </div>
-                        </div>
-                        <a href="#monCarousel" class="left carousel-control" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-        
-                        <a href="#monCarousel" class="right carousel-control" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                    </div>
-                </div>
             </div>
         </section>
         <footer class="text-center">
