@@ -2,10 +2,11 @@
 
 body
 {
+    position: relative;
     font-family: 'Lato', sans-serif; 
     --couleur-generale :  #292c2e; 
     --couleur-sombre :  #FFF; 
-    --couleur-fond : hsl(0, 0%, 91%);
+    --couleur-fond : hsl(0, 0%, 95%);
     --couleur-flash : #C96567;
     --couleur-flash : #FFD376;
 }
@@ -13,6 +14,11 @@ body
 h1,h2,h3,h4,h5,h6,p
 {
     font-weight: bold;
+}
+
+Button
+{
+    border-style: none;
 }
 
 img
@@ -64,6 +70,7 @@ section .heading h2
     padding : 25px 0 0 0;
     margin-bottom : 50px;
 }
+
 
 /* MENU */
 .navbar
@@ -262,18 +269,19 @@ section .heading h2
 #imgClick{
     width: 100px;
     top : 150px;
+    z-index: 3;
     animation-name : clignote;
     animation-duration: 1s;
     animation-iteration-count: infinite;
+    background-color : #fff;
+    border-radius: 50px;
 }
 
 
 @keyframes clignote{
-    0% {opacity: 1;} 
-    25% {opacity: 0.5;} 
+    0% {opacity: 0.7;} 
     50% {opacity: 0.25;} 
-    75% {opacity: 0.5;} 
-    100% {opacity: 1;} 
+    100% {opacity: 0.7;} 
 }
 
 #skillDescription{
@@ -303,6 +311,11 @@ section .heading h2
 
 .chart-small {
     top: 50px;
+}
+
+.premier
+{
+    display: none;
 }
 
 
@@ -485,39 +498,82 @@ section .heading h2
     color: var(--couleur-generale);
 }
 
-.carousel-control.left,.carousel-control.right
+#portfolio-skills
 {
-    background-image: none;
-    color: var(--couleur-flash);
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 20px;
 }
 
-.carousel-indicators
+#portfolio .button-portfolio
 {
-    bottom: 0px;
-}
-
-.carousel-indicators li
-{
-    border-color: var(--couleur-fenerale);
-}
-
-.carousel-indicators li.active
-{
-    border-color: var(--couleur-general);
+    font-weight: bold;
+    text-transform: uppercase;
+    color : var(--couleur-sombre);
     background-color: var(--couleur-generale);
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 40px; /* espace entre le bord et le texte */
+    transition: all 0.3s ease-in 0s;
 }
 
-#monCarousel .item h3
+#portfolio-skills li:nth-last-child() button
 {
-    color : #fff;
-    text-shadow: #000 1px 1px, #000 -1px 1px, #000 -1px -1px, #000 1px -1px;
-    font-style: italic;
-} 
+    background-color:red;
+}
 
-#monCarousel .item h4
+#portfolio .button-portfolio:hover
 {
-    font-size: 15px;
+    background-color: #fff;
+    text-decoration: none;
+    color: var(--couleur-generale);
+}
+
+.card-group
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.card
+{
+    display: flex;
+    flex-basis: 30%;
+    border-bottom: 3px solid var(--couleur-sombre);
+    border-left: 3px solid var(--couleur-sombre);
+    border-right: 3px solid var(--couleur-sombre);
+    border-radius: 7px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+
+.card img
+{
+    max-width: 101%;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.card-body
+{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 10px;
+}
+
+.card-body p
+{
+    display: flex;
+    flex-grow: 1;
 }
 
 .button2

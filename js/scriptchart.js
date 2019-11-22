@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function(){
     };
 
       var pieOptions = {
-        cutoutPercentage: 40,
         responsive: false,
         legend: {
           display: false,

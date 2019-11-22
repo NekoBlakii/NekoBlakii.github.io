@@ -18,9 +18,9 @@
     
     
     
-    <body>
+    <body data-spy="scroll" data-target="#navbar-menu">
         <!-- MENU -->
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav id="navbar-menu" class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#monMenu">
@@ -41,247 +41,259 @@
             </div>
         </nav>
 
-        <!-- A PROPOS -->
-        <section id="about" class="container-fluid">
-            <div class="col-xs-8 col-md-4 profile-picture">
-                <img src="images/profil03.jpg" alt="Bisiaux Alexia" class="img-thumbnail">
-                <div class="logo-rs">
-                    <a href="https://www.linkedin.com/in/alexia-bisiaux-972b24194/" target="_blank"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a>
+        <main>
+            <!-- A PROPOS -->
+            <section id="about" class="container-fluid">
+                <div class="col-xs-8 col-md-4 profile-picture">
+                    <img src="images/profil03.jpg" alt="Bisiaux Alexia" class="img-thumbnail">
+                    <div class="logo-rs">
+                        <a href="https://www.linkedin.com/in/alexia-bisiaux-972b24194/" target="_blank"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a>
+                    </div>
                 </div>
-            </div>
-            <div class="heading">
-                <h1>Alexia Bisiaux</h1>
-                <h3>Développeuse web</h3>
-                <a href="docs/Technicien%20informatique%20BISIAUX%20ALEXIA.pdf" class="button1">CV Papier</a>
-            </div>
-        </section>
-        
-        
-        <!-- COMPETENCES -->
-        <section id="skills">
-            <div class="section-head">
-                <div class="traitcouleur"></div>
                 <div class="heading">
-                    <h2>Compétences</h2>
+                    <h1>Alexia Bisiaux</h1>
+                    <h3>Développeuse web</h3>
+                    <a href="docs/Technicien%20informatique%20BISIAUX%20ALEXIA.pdf" class="button1">CV Papier</a>
                 </div>
-            </div>
-            <div class="container">
-                    <div id="rowChart" class="row">
-                            <div id="colChart" class="col-md-12">
-                                <img id ="imgClick" class="absolute center" src="images/onclick.png">
-                                <canvas id="myChart" class="absolute center" width="400vh" height="400vw"></canvas>
-                            </div>
-                            <span id="colDescription">
-                            </span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-     <!-- PORTFOLIO -->
-     <section id="portfolio">
-        <div class="section-head">
-            <div class="traitcouleur"></div>
-            <div class="heading">
-                <h2>Portfolio</h2>
-            </div>
-        </div>
-        <div class="container">
-            <div id="monCarousel" class="carousel slide text-center" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#monCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#monCarousel" data-slide-to="1"></li>
-                    <li data-target="#monCarousel" data-slide-to="2"></li>
-                    <li data-target="#monCarousel" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="images/Voyage.jpg">
-                        <div class="langages"><h4>HTML / CSS</h4></div>
-                        <div class="carousel-caption">
-                            <h3>Projet site de voyage</h3>
-                            <a class="button2" href="voyage.html"target="_blank" type="button">Voir le projet</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="images/chats.jpg">
-                        <div class="langages"><h4>HTML / CSS / JQuery</h4></div>
-                        <div class="carousel-caption">
-                            <h3>Projet site interactif</h3>
-                            <a class="button2" href="chats.html" target="_blank" type="button">Voir le projet</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="images/snake.jpg">
-                        <div class="langages"><h4>Javascript</h4></div>
-                        <div class="carousel-caption">
-                            <h3>Projet jeu du snake</h3>
-                            <a class="button2" href="snake.html" target="_blank" type="button">Voir le projet</a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="images/toysrus.jpg">
-                        <div class="langages"><h4>HTML / CSS / PHP / SQL</h4></div>
-                        <div class="carousel-caption">
-                            <h3>Projet site ressemblant à Toysrus</h3>
-                            <!-- ATTENTION Lien en local ici -->
-                            <!-- <a class="button2" href="http://local.toysrus.net/list?page=3&tri=-1&brand=-1" target="_blank" type="button">Voir le projet</a> -->
-                        </div>
-                    </div>
-                    <a href="#monCarousel" class="left carousel-control" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    
-                    <a href="#monCarousel" class="right carousel-control" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- FORMATIONS -->
-        <section id="formations">
+            </section>
+            
+            
+            <!-- COMPETENCES -->
+            <section id="skills">
                 <div class="section-head">
                     <div class="traitcouleur"></div>
                     <div class="heading">
-                        <h2>Formations</h2>
+                        <h2>Compétences</h2>
                     </div>
-                 </div>
-                <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="formations-block hvr-grow">
-                            <h5>2013</h5>
-                            <span class="glyphicon glyphicon-education"></span>
-                            <h3>Lycée - Céret</h3>
-                            <h4>Baccalauréat Scientifique Option Physique-Chimie</h4>
-                            <div class="traitcouleur"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-4">
-                         <div class="formations-block hvr-grow">
-                            <h5>2014-2017</h5>
-                            <span class="glyphicon glyphicon-education"></span>
-                            <h3>UPVD - Perpignan</h3>
-                            <h4>Licence Pro. Administrateur Systèmes</h4>
-                            <div class="traitcouleur"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                         <div class="formations-block hvr-grow">
-                            <h5>2019-2020</h5>
-                            <span class="glyphicon glyphicon-education"></span>
-                            <h3>L'idem - Le Soler</h3>
-                            <h4>Développeuse web et applications mobiles</h4>
-                            <div class="traitcouleur"></div>
-                        </div>
-                    </div>
-                
                 </div>
+                <div class="container">
+                        <div id="rowChart" class="row">
+                                <div id="colChart" class="col-md-12">
+                                    <img id ="imgClick" class="absolute center" src="images/onclick.png">
+                                    <canvas id="myChart" class="absolute center" width="400vh" height="400vw"></canvas>
+                                </div>
+                                <span id="colDescription">
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
             
-            </div>
-        </section>
-        
-          <!-- EXPERIENCES -->
-          <section id="experiences">
+        <!-- PORTFOLIO -->
+        <section id="portfolio">
             <div class="section-head">
                 <div class="traitcouleur"></div>
                 <div class="heading">
-                    <h2>Expériences</h2>
+                    <h2>Portfolio</h2>
                 </div>
             </div>
             <div class="container">
-                <ul class="timeline">
-                    <!-- AUCHAN CDI -->
-                    <li>
-                        <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
-                        <div class="timeline-panel-container">
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3>Auchan</h3>
-                                    <h4>Conseillère Multimédia / Librairie</h4>
-                                    <p class="text-muted"><small class="glyphicon glyphicon-time"> 09/2018-03/2019</small></p>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Mise en rayon </p>
-                                    <p>Conseil technique</p>
-                                    <p>Mise en place des nouveaux produits</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- GAMEJAM 2018 -->
-                    <li>
-                        <div class="timeline-badge"><span class="glyphicon glyphicon-star"></span></div>
-                        <div class="timeline-panel-container-inverted">
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3>Perpignan GameJam 2018</h3>
-                                    <h4>Développeuse C# / Unity</h4>
-                                    <p class="text-muted"><small class="glyphicon glyphicon-time"> 11/2018</small></p>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>BrainStorming</p>
-                                    <p>Contruction des classes</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- FNAC -->
-                    <li>
-                        <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
-                        <div class="timeline-panel-container">
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3>Fnac</h3>
-                                    <h4>Caissière</h4>
-                                    <p class="text-muted"><small class="glyphicon glyphicon-time"> 12/2017-01/2018</small></p>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Utilisation de la caisse</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- AUCHAN CONTRAT ETUDIANT -->
-                    <li>
-                        <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
-                        <div class="timeline-panel-container-inverted">
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3>Auchan</h3>
-                                    <h4>[Contrat Etudiant] Conseillère Multimédia</h4>
-                                    <p class="text-muted"><small class="glyphicon glyphicon-time"> 04/2017-08/2017</small></p>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Mise en rayon </p>
-                                    <p>Conseil technique</p>
-                                    <p>Mise en place des nouveaux produits</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- DELTA SYSTEMES STAGE -->
-                    <li>
-                        <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
-                        <div class="timeline-panel-container">
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h3>Delta Systèmes</h3>
-                                    <h4>Technicien Informatique</h4>
-                                    <p class="text-muted"><small class="glyphicon glyphicon-time"> 04/2017-06/2017</small></p>
-                                </div>
-                                <div class="timeline-body">
-                                    <p>Hotline </p>
-                                    <p>Helpdesk</p>
-                                    <p>Prise en main à distance</p>
-                                    <p>Installation et configuration sur site de postes et serveurs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                <ul id="portfolio-skills">
+                    <li><Button id="portfolio-all" class="button-portfolio text-center">Tous</Button></li>
+                    <li><Button id="portfolio-js" class="button-portfolio text-center">Javascript</Button></li>
+                    <li><Button id="portfolio-unity" class="button-portfolio text-center">C# / Unity</Button></li>
                 </ul>
+                <div class="card-group">
+                        <div class="card border-dark js">
+                            <img src="images/Voyage.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Card title</h4>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="#" class="button2 text-center">Voir le Projet</a>
+                            </div>
+                        </div>
+                        <div class="card border-dark js">
+                            <img src="images/snake.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Jeu du serpent</h4>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="button2 text-center">Voir le Projet</a>
+                            </div>
+                        </div>
+                        <div class="card border-dark">
+                            <img src="images/toysrus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Site ressemblant à Toy'srus</h4>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                <a href="#" class="button2 text-center">Voir le Projet</a>
+                            </div>
+                        </div>
+                        <div class="card border-dark">
+                            <img src="images/toysrus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Card title</h4>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                <a href="#" class="button2 text-center">Voir le Projet</a>
+                            </div>
+                        </div>
+                        <div class="card border-dark">
+                            <img src="images/toysrus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Card title</h4>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                <a href="#" class="button2 text-center">Voir le Projet</a>
+                            </div>
+                        </div>
+                        <div class="card border-dark">
+                            <img src="images/toysrus.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Card title</h4>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                <a href="#" class="button2 text-center">Voir le Projet</a>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </section>
+
+            <!-- FORMATIONS -->
+            <section id="formations">
+                    <div class="section-head">
+                        <div class="traitcouleur"></div>
+                        <div class="heading">
+                            <h2>Formations</h2>
+                        </div>
+                    </div>
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="formations-block hvr-grow">
+                                <h5>2013</h5>
+                                <span class="glyphicon glyphicon-education"></span>
+                                <h3>Lycée - Céret</h3>
+                                <h4>Baccalauréat Scientifique Option Physique-Chimie</h4>
+                                <div class="traitcouleur"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-4">
+                            <div class="formations-block hvr-grow">
+                                <h5>2014-2017</h5>
+                                <span class="glyphicon glyphicon-education"></span>
+                                <h3>UPVD - Perpignan</h3>
+                                <h4>Licence Pro. Administrateur Systèmes</h4>
+                                <div class="traitcouleur"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="formations-block hvr-grow">
+                                <h5>2019-2020</h5>
+                                <span class="glyphicon glyphicon-education"></span>
+                                <h3>L'idem - Le Soler</h3>
+                                <h4>Développeuse web et applications mobiles</h4>
+                                <div class="traitcouleur"></div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                
+                </div>
+            </section>
+            
+            <!-- EXPERIENCES -->
+            <section id="experiences">
+                <div class="section-head">
+                    <div class="traitcouleur"></div>
+                    <div class="heading">
+                        <h2>Expériences</h2>
+                    </div>
+                </div>
+                <div class="container">
+                    <ul class="timeline">
+                        <!-- AUCHAN CDI -->
+                        <li>
+                            <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
+                            <div class="timeline-panel-container">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3>Auchan</h3>
+                                        <h4>Conseillère Multimédia / Librairie</h4>
+                                        <p class="text-muted"><small class="glyphicon glyphicon-time"> 09/2018-03/2019</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Mise en rayon </p>
+                                        <p>Conseil technique</p>
+                                        <p>Mise en place des nouveaux produits</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- GAMEJAM 2018 -->
+                        <li>
+                            <div class="timeline-badge"><span class="glyphicon glyphicon-star"></span></div>
+                            <div class="timeline-panel-container-inverted">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3>Perpignan GameJam 2018</h3>
+                                        <h4>Développeuse C# / Unity</h4>
+                                        <p class="text-muted"><small class="glyphicon glyphicon-time"> 11/2018</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>BrainStorming</p>
+                                        <p>Contruction des classes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- FNAC -->
+                        <li>
+                            <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
+                            <div class="timeline-panel-container">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3>Fnac</h3>
+                                        <h4>Caissière</h4>
+                                        <p class="text-muted"><small class="glyphicon glyphicon-time"> 12/2017-01/2018</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Utilisation de la caisse</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- AUCHAN CONTRAT ETUDIANT -->
+                        <li>
+                            <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
+                            <div class="timeline-panel-container-inverted">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3>Auchan</h3>
+                                        <h4>[Contrat Etudiant] Conseillère Multimédia</h4>
+                                        <p class="text-muted"><small class="glyphicon glyphicon-time"> 04/2017-08/2017</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Mise en rayon </p>
+                                        <p>Conseil technique</p>
+                                        <p>Mise en place des nouveaux produits</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- DELTA SYSTEMES STAGE -->
+                        <li>
+                            <div class="timeline-badge"><span class="glyphicon glyphicon-briefcase"></span></div>
+                            <div class="timeline-panel-container">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h3>Delta Systèmes</h3>
+                                        <h4>Technicien Informatique</h4>
+                                        <p class="text-muted"><small class="glyphicon glyphicon-time"> 04/2017-06/2017</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Hotline </p>
+                                        <p>Helpdesk</p>
+                                        <p>Prise en main à distance</p>
+                                        <p>Installation et configuration sur site de postes et serveurs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
         <footer class="text-center">
             <h5> 2019 Bisiaux Alexia</h5>
         </footer>
