@@ -18,22 +18,22 @@ var isFinish = false;
             wH = $(window).height(),
             wS = $(this).scrollTop();
 
-        if ((wS > (hT+hH-wH) && (hT > wS) && (wS+wH > hT+hH)) && !isFinish){
-            anime({
-                targets: '.logo-extra ',
-                translateX: 1500,
-                delay: anime.stagger(300, {easing: 'easeOutQuad'}),
-            });
-            anime({
-                targets: '.logo-back',
-                translateX: 1500,
-                delay: anime.stagger(300, {easing: 'easeOutQuad'}),
-            });
-            anime({
-                targets: '.logo-front',
-                translateX: 1500,
-                delay: anime.stagger(300, {easing: 'easeOutQuad'}),
-            });
+            if ((wS > (hT+hH-wH) && (hT > wS) && (wS+wH > hT+hH)) && !isFinish){
+                anime({
+                    targets: '.logo-front',
+                    translateX: 1550,
+                    delay: anime.stagger(500, {easing: 'easeOutQuad'}),
+                });
+                anime({
+                    targets: '.logo-back',
+                    translateX: 1550,
+                    delay: anime.stagger(800, {easing: 'easeOutQuad'}),
+                });
+                anime({
+                    targets: '.logo-extra',
+                    translateX: 1550,
+                    delay: anime.stagger(800, {easing: 'easeOutQuad'}),
+                });
             isFinish = true
         } else {
             

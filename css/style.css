@@ -211,60 +211,73 @@ section .heading h2
     fill : #333;
 }
 
-.logo-html > svg:hover{
+.logo-html:hover svg{
     fill : #e34f26
 }
 
-/* Changer la couleur du text 
-.hvr-underline-from-left:hover
-{
-    color : #e34f26;
-}*/
-
-.logo-css > svg:hover{
+.logo-css:hover svg{
     fill : #029ae5
 }
 
-.logo-js > svg:hover{
+.logo-js:hover svg{
     fill : #f7df1e
 }
 
-.logo-bootstrap > svg:hover{
+.logo-bootstrap:hover svg{
     fill : #563d7c
 }
 
-.logo-php > svg:hover{
+.logo-php:hover svg{
     fill : #8892be
 }
 
-.logo-mysql > svg:hover{
+.logo-mysql:hover svg{
     fill : #00758f
 }
 
-.logo-unity > svg:hover{
+.logo-unity:hover svg{
     fill : #000
 }
 
-.logo-csharp > svg:hover{
+.logo-csharp:hover svg{
     fill : #1e9e25
+}
+
+.logo span{
+    cursor: default;
 }
 
 .titleSkill {
     padding-left : 40px;
 }
 
-#skills #skillDescription{
-    display: flex;
-    height: 400px;
-    justify-content: space-around;
-    align-content: center;
+#skillDescription{
+    font-size: 30px;
 }
 
-#skillDescription div  div
+#skillDescription div h2
+{
+    padding-bottom: 20px;
+}
+
+#skillDescription .logo svg, .titleSkill
 {
     position: absolute;
     left: -1500px;
 }
+
+#skillDescription .logo span
+{
+    margin-left: 80px;
+    margin-top: 15px;
+}
+
+.logo
+{
+    display: block;
+    height: 100px;
+}
+
 
 #imgClick{
     width: 100px;
@@ -284,9 +297,6 @@ section .heading h2
     100% {opacity: 0.7;} 
 }
 
-#skillDescription{
-    font-size: 30px;
-}
 
 #colChart {
     position: relative;
