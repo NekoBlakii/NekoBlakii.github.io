@@ -249,11 +249,6 @@ section .heading h2
     fill : #1e9e25
 }
 
-#skillDescription > * {
-    display: flex;
-    align-items: center;
-}
-
 .titleSkill {
     padding-left : 40px;
 }
@@ -261,9 +256,14 @@ section .heading h2
 #skills #skillDescription{
     display: flex;
     height: 400px;
-    flex-direction: column;
     justify-content: space-around;
     align-content: center;
+}
+
+#skillDescription div  div
+{
+    position: absolute;
+    left: -1500px;
 }
 
 #imgClick{
