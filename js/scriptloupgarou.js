@@ -25,7 +25,7 @@ function addPlayers()
     for(let i = 1; i<=nbPlayers;i++)
     {
         inputPlayers.innerHTML +=
-            '<div class="player '+ i +'"> ' +
+            '<div class="player player'+ i +'"> ' +
                 '<div class="input-group-prepend">' +
                     '<span class="input-group-text" id="inputGroup-sizing-lg"> Joueur '+ i +'</span>' +
                 '</div>' +
@@ -33,5 +33,9 @@ function addPlayers()
             '</div>'
         ;
     }
+}
 
+function reload()
+{
+    document.location.reload(true);
 }
