@@ -247,6 +247,13 @@ section .heading h2
     cursor: default;
 }
 
+.logo-skill
+{
+    display: flex;
+    height: 100px;
+    margin-left: 20%;
+}
+
 .titleSkill {
     padding-left : 40px;
 }
@@ -260,24 +267,15 @@ section .heading h2
     padding-bottom: 20px;
 }
 
-#skillDescription .logo svg, .titleSkill
+
+
+#skillDescription .logo
 {
     position: absolute;
+    display: flex;
+    align-items: center;
     left: -1500px;
 }
-
-#skillDescription .logo span
-{
-    margin-left: 80px;
-    margin-top: 15px;
-}
-
-.logo
-{
-    display: block;
-    height: 100px;
-}
-
 
 #imgClick{
     width: 100px;
