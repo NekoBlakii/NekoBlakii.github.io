@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loup Garou</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styleloupgarou.css">
+    <script src="js/scriptloupgarou.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Conteur Loup Garou</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Liste des roles :</h1>
+                    <div id="input-roles" class="input-group input-group-lg">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h1>Joueurs :</h1>
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Nombre de joueurs</span>
+                    <input id="nb-players" type="number" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" value="0">
+                    <div>
+                        <button type="button" class="btn btn-warning" onclick="addPlayers()">Ajouter</button>
+                        <button type="button" class="btn btn-danger">Reset</button>
+                    </div>
+                    <div id="input-players">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

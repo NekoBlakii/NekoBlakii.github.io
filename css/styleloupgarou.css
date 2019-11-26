@@ -1,0 +1,60 @@
+/* GENERALE */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-family: 'Lato', sans-serif; 
+    --couleur-generale :  #292c2e; 
+    --couleur-sombre :  #FFF; 
+    --couleur-fond : #F5F5F5;
+    --couleur-flash : #FFD376;
+}
+
+h1,h2,h3,h4,h5,h6,p
+{
+    font-weight: bold;
+}
+
+Button
+{
+    border-style: none;
+}
+
+
+/* HEADER */
+
+header
+{
+    display: flex;
+    padding: 50px;
+    background-color : var(--couleur-generale);
+    color: #fff;
+    justify-content: center;
+}
+
+
+/* MAIN */
+
+.input-group
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.role
+{
+    display: flex;
+    padding: 20px;
+}
+
+
+.player
+{
+    padding-bottom: 15px;
+}

@@ -6,7 +6,7 @@ body
     font-family: 'Lato', sans-serif; 
     --couleur-generale :  #292c2e; 
     --couleur-sombre :  #FFF; 
-    --couleur-fond : hsl(0, 0%, 95%);
+    --couleur-fond : #F5F5F5;
     --couleur-flash : #C96567;
     --couleur-flash : #FFD376;
 }
@@ -21,12 +21,6 @@ Button
     border-style: none;
 }
 
-img
-{
-    max-width: 50%;
-    height: auto;
-}
-
 ul
 {
     list-style-type: none;
@@ -34,8 +28,9 @@ ul
 
 section
 {
-    padding: 0 0 100px 0;
+    padding: 20px 0 100px 0;
 }
+
 
 section .heading
 {
@@ -48,11 +43,16 @@ section .heading h2
     text-transform: uppercase;
 }
 
+section:nth-child(2n)
+{
+    background-color: var(--couleur-fond);
+}
+
 .traitcouleur
 {
-    width: 100px;
-    height: 2px;
-    background: var(--couleur-generale);
+    width: 150px;
+    height: 5px;
+    background: var(--couleur-flash);
     margin: 0 auto;
 }
 
@@ -66,11 +66,32 @@ section .heading h2
 
 .section-head{
     top: 10px;
-    background: var(--couleur-flash);
+    
     padding : 25px 0 0 0;
     margin-bottom : 50px;
 }
 
+/* HEADER */
+
+header
+{
+    min-height: 100vh;
+    position: relative;
+}
+
+header .heading {
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.homepage-picture
+{
+    width: 100%;
+    height: 100vh;
+}
 
 /* MENU */
 .navbar
@@ -121,7 +142,6 @@ section .heading h2
 {
     padding-bottom : 0;
     padding-top: 100px;
-    background: var(--couleur-generale);
 }
 
 .profile-picture
@@ -137,6 +157,10 @@ section .heading h2
     width: 35%;
 }
 
+.col-about-text
+{
+    padding-bottom: 50px;
+}
 
 .logo-rs svg {
     position: absolute;
@@ -152,9 +176,8 @@ section .heading h2
 
 #about .heading h1
 {
-    color: #fff;
+    color: var(--couleur-generale);
     text-transform: uppercase;
-    text-shadow: 1px 1px #000;
 }
 
 #about .heading h3
@@ -167,7 +190,8 @@ section .heading h2
 {
     font-weight: bold;
     text-transform: uppercase;
-    color : #fff;
+    color : var(--couleur-sombre);
+    background: var(--couleur-generale);
     border: 1px solid #fff;
     border-radius: 3px;
     display: inline-block;
@@ -178,22 +202,18 @@ section .heading h2
 
 .button1:hover
 {
-    background: #fff;
-    color: var(--couleur-generale);
+    background: #000;
+    color: var(--couleur-sombre);
     text-decoration: none;
 }
 
 /* SKILLS */
 
-#skills
-{
-    background: var(--couleur-fond);
-}
-
+/*
 #skills .heading h2
 {
     color: var(--couleur-generale);
-}
+}*/
 
 .transform {
     transition: 2s;
@@ -328,10 +348,6 @@ section .heading h2
 
 
 /* EXPERIENCES */
-#experiences
-{
-    background: var(--couleur-fond);
-}
 
 #experiences .heading h2
 {
@@ -415,12 +431,10 @@ section .heading h2
     width: 70%;
     float: right;
     margin-right: 50px;
-    border: 1px solid #d4d4d4;
     border-radius: 7px;
     padding: 20px 25px;
     position: relative;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.2);
-    background: #fff;
+    background: var(--couleur-fond);
 }
 
 .timeline-panel-container-inverted .timeline-panel
@@ -448,10 +462,6 @@ section .heading h2
 }
 
 /* FORMATIONS */
-#formations
-{
-    background: var(--couleur-fond);
-}
 
 #formations .heading h2
 {
@@ -464,7 +474,7 @@ section .heading h2
     margin: 0 auto;
     text-align: center;
     padding: 30px;
-    background: var(--couleur-generale);
+    background: #fff;
     border-radius: 10px;
     border: 2px solid var(--couleur-sombre);
     margin-bottom: 20px;
@@ -472,7 +482,7 @@ section .heading h2
 
 .formations-block h5
 {
-    color: var(--couleur-sombre);
+    color: var(--couleur-generale);
     font-size: 20px;
     margin-bottom: 15px;
 }
@@ -480,26 +490,20 @@ section .heading h2
 .formations-block .glyphicon
 {
     font-size: 40px;
-    color: var(--couleur-flash);
+    color: var(--couleur-generale);
 }
 
 .formations-block h3
 {
     color: var(--couleur-flash);
-    text-shadow: 1px 1px #000;
 }
 
 .formations-block h4
 {
-    color: var(--couleur-sombre);
+    color: var(--couleur-generale);
 }
 
 /* PORTFOLIO */
-
-#portfolio
-{
-    background: var(--couleur-fond);
-}
 
 #portfolio .heading h2
 {
@@ -526,10 +530,6 @@ section .heading h2
     transition: all 0.3s ease-in 0s;
 }
 
-#portfolio-skills li:nth-last-child() button
-{
-    background-color:red;
-}
 
 #portfolio .button-portfolio:hover
 {
@@ -645,3 +645,4 @@ footer h5
     font-size: 15px;
     font-weight: normal;
 }
+
