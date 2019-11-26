@@ -20,18 +20,13 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    <h1>Liste des roles :</h1>
-                    <div id="input-roles" class="input-group input-group-lg">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <h1>Joueurs :</h1>
+                <div id="game-container">
+                    <h1>Ajouter des joueurs :</h1>
                     <span class="input-group-text" id="inputGroup-sizing-lg">Nombre de joueurs</span>
                     <input id="nb-players" type="number" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" value="0">
-                    <div>
-                        <button type="button" class="btn btn-warning" onclick="addPlayers()">Ajouter</button>
-                        <button type="button" class="btn btn-danger" onclick="reload()">Reset</button>
+                    <div id="button-actions">
+                        <button id="add-player-button" type="button" class="btn btn-primary" onclick="addPlayers()">Ajouter</button>
+                        <button type="button" class="btn btn-danger" onclick="reload()">Reset Party</button>
                     </div>
                     <div id="input-players">
                     </div>
