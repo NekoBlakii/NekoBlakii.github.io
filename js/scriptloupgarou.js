@@ -159,7 +159,7 @@ function launchGame()
 
         if(namePlayer.length > 0)
         {
-            content += '<span class="input-group-text bg-warning" id="inputGroup-sizing-lg">'+ namePlayer +'</span>';
+            content += '<span class="input-group-text bg-success" id="inputGroup-sizing-lg">'+ namePlayer +'</span>';
         }
 
         content += 
@@ -178,7 +178,7 @@ function launchGame()
         colPlayers.innerHTML += 
             '<div class="player ' + player.role +'"> ' +
                 '<div class="input-group-prepend">' +
-                    '<span class="input-group-text bg-warning">'+ player.name +'</span>'+
+                    '<span class="input-group-text bg-success">'+ player.name +'</span>'+
                     '<div id="options" class="input-group-text">'+
                         '<div>Couple <input type="radio"></div>'+
                         '<div>Salvaté <input type="checkbox"></div>'+
@@ -192,7 +192,7 @@ function launchGame()
             '</div>';
     });
     colPlayers.innerHTML += 
-        '<button type="button" class="btn btn-success" onclick="reStartGame()">Restart</button>';
+        '<button type="button" class="btn btn-danger" onclick="reStartGame()">Restart</button>';
     rowGame.innerHTML += '</div>';
 
 }

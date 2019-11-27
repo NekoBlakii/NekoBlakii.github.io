@@ -11,33 +11,64 @@ $(function(){
 
 
 var isFinish = false;
+var isOver = false;
 
     $(window).scroll(function() {
-        var hT = $('#skillDescription').offset().top,
-            hH = $('#skillDescription').outerHeight(),
-            wH = $(window).height(),
-            wS = $(this).scrollTop();
 
-            if ((wS > (hT+hH-wH) && (hT > wS) && (wS+wH > hT+hH)) && !isFinish){
-                anime({
-                    targets: '.logo-front',
-                    translateX: 1500,
-                    delay: anime.stagger(500, {easing: 'easeOutQuad'}),
-                });
-                anime({
-                    targets: '.logo-back',
-                    translateX: 1500,
-                    delay: anime.stagger(800, {easing: 'easeOutQuad'}),
-                });
-                anime({
-                    targets: '.logo-extra',
-                    translateX: 1500,
-                    delay: anime.stagger(800, {easing: 'easeOutQuad'}),
-                });
+        if(isScrolled('#skillDescription') && !isFinish){
+            anime({
+                targets: '.logo-front',
+                translateX: 1500,
+                delay: anime.stagger(500, {easing: 'easeOutQuad'}),
+            });
+            anime({
+                targets: '.logo-back',
+                translateX: 1500,
+                delay: anime.stagger(800, {easing: 'easeOutQuad'}),
+            });
+            anime({
+                targets: '.logo-extra',
+                translateX: 1500,
+                delay: anime.stagger(800, {easing: 'easeOutQuad'}),
+            });
             isFinish = true
         } else {
             
         }
+
+        if(isScrolled('#formations-container') && !isOver)
+        {
+            anime({
+                targets: '.formation1',
+                translateX: 1500,
+                delay: anime.stagger(500, {easing: 'easeOutQuad'}),
+            });
+            anime({
+                targets: '.formation2',
+                translateY: 1500,
+                delay: anime.stagger(500, {easing: 'easeOutQuad'}),
+            });
+            anime({
+                targets: '.formation3',
+                translateX: -2000,
+                delay: anime.stagger(500, {easing: 'easeOutQuad'}),
+            });
+            isOver = true
+        }
+        else{
+
+        }
+
+
      });
 
+     const isScrolled = function(section)
+     {
+         var hT = $(section).offset().top,
+                 hH = $(section).outerHeight(),
+                 wH = $(window).height(),
+                 wS = $(this).scrollTop();
+        var isScrolled = ((wS > (hT+hH-wH) && (hT > wS) && (wS+wH > hT+hH)));
+        return isScrolled;
+     };
 });
