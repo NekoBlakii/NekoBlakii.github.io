@@ -1,11 +1,11 @@
-var roles = ['Voleur','Cupidon','Montreur d\'Ours','Ancien','Chasseur','Chevalier','Petite Fille',
+var roles = ['Voleur','Cupidon','Montreur d Ours','Ancien','Chasseur','Chevalier','Petite Fille',
              'Enfant Sauvage','Salvateur','Loup Garou','Loup Garou Infecté','Loup Garou Blanc',
              'Voyante','Sorcière','Serveur','Corbeau'];
              
-var gameContainer = null;
+var rowContainer = null;
 
 $(function(){
-    gameContainer = document.getElementById('game-container');   
+    rowContainer = document.getElementById('row-game');   
 });
 
 function addPlayers()
@@ -56,6 +56,11 @@ class player
         this.isLeader = false;
         this.isModel = false;
     }
+
+    resetRoles()
+    {
+        this.role= "";
+    }
 }
 
 function play()
@@ -78,30 +83,34 @@ function play()
 
     if(!hasFailed)
     {
-        gameContainer.innerHTML = "";
+        rowContainer.innerHTML = "";
         initRoles();
     }
+
 
 }
 
 function initRoles()
 {
+    rowContainer.innerHTML += '<div id="game-container">'
+    let gameContainer = document.getElementById('game-container');
     players.forEach(element => {
-        let _str =  
+        let content =  
         '<div class="player">' +
             '<div class="input-group-prepend">' +
                 '<span class="input-group-text" id="inputGroup-sizing-lg">'+ element.name +'</span>' +
                 '<select class="role-select">' +
                 "<option value=''> Role </option>";
-        roles.forEach((e) => _str += "<option value='" + e + "'>" + e + "</option>")
-        _str +=
+        roles.forEach((e) => content += "<option value='" + e + "'>" + e + "</option>")
+        content +=
                 '</select>' +
             '</div>' +
         '</div>';
-        gameContainer.innerHTML += _str;
+        gameContainer.innerHTML += content;
     });
 
     gameContainer.innerHTML += '<button type="button" class="btn btn-success" onclick="startGame()">Play</button>'
+    gameContainer.innerHTML += '</div>'
 }
 
 function startGame()
@@ -122,21 +131,81 @@ function startGame()
 
     if(!hasError)
     {
-        gameContainer.innerHTML = "";
+        rowContainer.innerHTML = "";
         launchGame();
     }
 }
 
 function launchGame()
 {
-    console.log("YES");
+    // COLONNEROLES
+    let rowGame = document.getElementById('row-game');
+    rowGame.innerHTML += '<div id="col-roles" class="col-sm-6"><h1>Liste des roles :</h1>';
+    let colRoles = document.getElementById('col-roles');
     roles.forEach(element => {
-        gameContainer.innerHTML +=
+        var namePlayer = [];
+        var content = "";
+        
+        players.forEach(player =>{
+            if(player.role == element)
+            {
+                namePlayer.push(player.name);
+            }
+        });
+        content +=
             '<div class="role ' + element +'"> ' +
                 '<div class="input-group-prepend">' +
-                    '<span class="input-group-text" id="inputGroup-sizing-lg">'+ element +'</span>' +
+                    '<span class="input-group-text" id="inputGroup-sizing-lg">'+ element +'</span>';
+
+        if(namePlayer.length > 0)
+        {
+            content += '<span class="input-group-text bg-warning" id="inputGroup-sizing-lg">'+ namePlayer +'</span>';
+        }
+
+        content += 
                 '</div>' +
-            '</div>'
+            '</div>';
         ;
+
+        colRoles.innerHTML += content;
     });
+    rowGame.innerHTML += '</div>';
+
+    //COLONNEPLAYERS
+    rowGame.innerHTML += '<div id="col-players" class="col-sm-6"><h1>Liste des joueurs :</h1>';
+    let colPlayers = document.getElementById('col-players');
+    players.forEach(player =>{
+        colPlayers.innerHTML += 
+            '<div class="player ' + player.role +'"> ' +
+                '<div class="input-group-prepend">' +
+                    '<span class="input-group-text bg-warning">'+ player.name +'</span>'+
+                    '<div class="input-group-text">'+
+                        'Couple <input type="radio">'+
+                        'Salvaté <input type="checkbox"">'+
+                        'Cible <input type="checkbox">'+
+                        'Infecté <input type="checkbox">'+
+                        'Servi <input type="checkbox">'+
+                        'Corbeauté <input type="checkbox">'+
+                        'Mort <input type="radio">'+
+                    '</div>'+
+                '</div>' +
+            '</div>';
+    });
+    colPlayers.innerHTML += 
+        '<button type="button" class="btn btn-success" onclick="reStartGame()">Restart</button>';
+    rowGame.innerHTML += '</div>';
+
+}
+
+function reStartGame()
+{
+    let rowGame = document.getElementById('row-game');
+    rowGame.innerHTML = "";
+
+    players.forEach(player => {
+        player.resetRoles();
+    });
+
+    initRoles();
+
 }
