@@ -58,3 +58,9 @@ header
 {
     padding-bottom: 15px;
 }
+
+#options
+{
+    display: flex;
+    flex-wrap: wrap;
+}

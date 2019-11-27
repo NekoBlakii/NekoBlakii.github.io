@@ -179,14 +179,14 @@ function launchGame()
             '<div class="player ' + player.role +'"> ' +
                 '<div class="input-group-prepend">' +
                     '<span class="input-group-text bg-warning">'+ player.name +'</span>'+
-                    '<div class="input-group-text">'+
-                        'Couple <input type="radio">'+
-                        'Salvaté <input type="checkbox"">'+
-                        'Cible <input type="checkbox">'+
-                        'Infecté <input type="checkbox">'+
-                        'Servi <input type="checkbox">'+
-                        'Corbeauté <input type="checkbox">'+
-                        'Mort <input type="radio">'+
+                    '<div id="options" class="input-group-text">'+
+                        '<div>Couple <input type="radio"></div>'+
+                        '<div>Salvaté <input type="checkbox"></div>'+
+                        '<div>Cible <input type="checkbox"></div>'+
+                        '<div>Infecté <input type="checkbox"></div>'+
+                        '<div>Servi <input type="checkbox"></div>'+
+                        '<div>Corbeauté <input type="checkbox"></div>'+
+                        '<div>Mort <input type="radio"></div>'+
                     '</div>'+
                 '</div>' +
             '</div>';
