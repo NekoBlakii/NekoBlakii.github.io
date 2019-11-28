@@ -302,10 +302,20 @@ header .heading {
 
 #skillDescription .logo
 {
-    position: absolute;
     display: flex;
     align-items: center;
+}
+
+#skillDescription .desktop
+{
+    position: absolute;
     left: -1500px;
+}
+
+.mobile-skills
+{
+    display: flex;
+    align-items: center;
 }
 
 #imgClick{
