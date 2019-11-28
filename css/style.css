@@ -490,7 +490,6 @@ header .heading {
 
 .formations-block
 {
-    width: 80%;
     margin: 0 auto;
     text-align: center;
     padding: 30px;
@@ -521,18 +520,6 @@ header .heading {
 .formations-block h4
 {
     color: var(--couleur-generale);
-}
-/*
-#formations .container 
-{
-    height: 300px;
-}
-*/
-
-.formation
-{
-    display: flex;
-    height: 300px;
 }
 
 .form1
