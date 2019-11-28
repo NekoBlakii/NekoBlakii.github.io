@@ -7,6 +7,7 @@ body
     --couleur-generale :  #292c2e; 
     --couleur-sombre :  #FFF; 
     --couleur-fond : #F5F5F5;
+    --couleur-text : #7c7c7c;
     --couleur-flash : #C96567;
     --couleur-flash : #FFD376;
 }
@@ -20,6 +21,13 @@ body .row
 h1,h2,h3,h4,h5,h6,p
 {
     font-weight: bold;
+}
+
+p
+{
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--couleur-text)
 }
 
 Button
@@ -70,11 +78,9 @@ section:nth-child(2n)
     margin: 0 auto;
 }
 
-.section-head{
+.section-head {
     top: 10px;
-    
     padding : 25px 0 0 0;
-    margin-bottom : 50px;
 }
 
 /* HEADER */
@@ -83,6 +89,7 @@ header
 {
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
 header .heading {
@@ -176,19 +183,25 @@ header .heading {
     fill : var(--couleur-flash);
 }
 
+.logo-rs a
+{
+    display: block;
+    padding-bottom: 40px;
+}
+
 .logo-rs svg:hover {
-    fill : var(--couleur-fond);
+    fill : var(--couleur-generale);
 }
 
 #about .heading h1
 {
+    font-size: 24px;
     color: var(--couleur-generale);
     text-transform: uppercase;
 }
 
 #about .heading h3
 {
-    font-size: 36px;
     color: var(--couleur-flash);
 }
 
@@ -202,13 +215,13 @@ header .heading {
     border-radius: 3px;
     display: inline-block;
     margin-top: 20px;
-    padding: 20px 50px; /* espace entre le bord et le texte */
+    padding: 10px 40px; /* espace entre le bord et le texte */
     transition: all 0.3s ease-in 0s;
 }
 
 .button1:hover
 {
-    background: #000;
+    background: var(--couleur-text);
     color: var(--couleur-sombre);
     text-decoration: none;
 }
@@ -344,219 +357,6 @@ header .heading {
     display: none;
 }
 
-
-/* EXPERIENCES */
-
-#experiences .heading h2
-{
-    color: var(--couleur-generale);
-}
-
-.experience-container
-{
-    display: flex;
-}
-
-.experience-container .col-left,.col-right
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-
-.timeline
-{
-    padding: 30px 10px;
-    position: relative;
-}
-
-.timeline:before 
-{
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    content: " ";
-    width: 5px;
-    background: var(--couleur-generale);
-    left: 50%;
-    margin-left: -2.5px;
-}
-
-.timeline li
-{
-    margin-bottom: 20px;
-    position: relative;
-    
-}
-
-.timeline li:after
-{
-    clear:both;
-}
-
-.timeline li:before, .timeline li:after
-{
-    content: " ";
-    display: table;
-}
-
-.timeline-badge
-{
-    color: var(--couleur-sombre);
-    width: 70px;
-    height: 70px;
-    font-size: 40px;
-    text-align: center;
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    margin-left: -35px;
-    background-color: var(--couleur-flash);
-    border-radius: 10%;
-}
-
-.timeline-badge > .glyphicon-briefcase {
-    top: 13px;
-}
-
-.timeline-badge > .glyphicon-star {
-    top: 12px;
-    left: 1px;
-}
-
-.timeline-panel-container
-{
-    width: 50%;
-    float: left;
-}
-
-.timeline-panel-container-inverted
-{
-    width: 50%;
-    float: right;
-}
-
-.timeline-panel
-{
-    width: 70%;
-    float: right;
-    margin-right: 50px;
-    border-radius: 7px;
-    padding: 20px 25px;
-    position: relative;
-    background: var(--couleur-fond);
-}
-
-.timeline-panel-container-inverted .timeline-panel
-{
-    float: left;
-    margin-left: 50px;
-}
-
-.timeline-heading h3
-{
-    margin-top: 5px;
-    font-size: 20px;
-}
-
-.timeline-heading h4
-{
-    font-size: 15px;
-    color: var(--couleur-generale);
-}
-
-.timeline-heading .text-muted
-{
-    font-size: 16px;
-    color: var(--couleur-flash);
-}
-
-/* FORMATIONS */
-
-#formations
-{
-    overflow: hidden;
-}
-
-#formations .row {
-    position: relative;
-}
-
-#formations .heading h2
-{
-    color: var(--couleur-generale);
-}
-
-.formations-block
-{
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 30px;
-    background: #fff;
-    border-radius: 10px;
-    border: 2px solid var(--couleur-sombre);
-    margin-bottom: 20px;
-}
-
-.formations-block h5
-{
-    color: var(--couleur-generale);
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.formations-block .glyphicon
-{
-    font-size: 40px;
-    color: var(--couleur-generale);
-}
-
-.formations-block h3
-{
-    color: var(--couleur-flash);
-}
-
-.formations-block h4
-{
-    color: var(--couleur-generale);
-}
-/*
-#formations .container 
-{
-    height: 300px;
-}
-*/
-
-.formation
-{
-    display: flex;
-    height: 300px;
-}
-
-.formation1 
-{
-    position: absolute;
-    left: -1500px;
-    margin-left:10%;
-}
-
-.formation2
-{
-    position: absolute;
-    top: -1500px;
-    margin-left:7%;
-}
-
-.formation3
-{
-    position: absolute;
-    left: 2000px;
-    margin-left:10%;
-}
-
 /* PORTFOLIO */
 
 #portfolio .heading h2
@@ -672,6 +472,138 @@ header .heading {
     padding: 10px 30px; /* espace entre le bord et le texte */
 }
 
+
+
+
+/* FORMATIONS */
+
+#formations
+{
+    overflow: hidden;
+    position: relative;
+}
+
+#formations .heading h2
+{
+    color: var(--couleur-generale);
+}
+
+.formations-block
+{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    border: 2px solid var(--couleur-sombre);
+    margin-bottom: 20px;
+}
+
+.formations-block h5
+{
+    color: var(--couleur-generale);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.formations-block .glyphicon
+{
+    font-size: 40px;
+    color: var(--couleur-generale);
+}
+
+.formations-block h3
+{
+    color: var(--couleur-flash);
+}
+
+.formations-block h4
+{
+    color: var(--couleur-generale);
+}
+/*
+#formations .container 
+{
+    height: 300px;
+}
+*/
+
+.formation
+{
+    display: flex;
+    height: 300px;
+}
+
+.form1
+{
+    left: -1500px;
+}
+
+.form2
+{
+    top: -1500px;
+}
+
+.form3
+{
+    left: 2000px;
+}
+
+/* EXPERIENCES */
+
+#experiences
+{
+    overflow: hidden;
+    position: relative;
+}
+
+#experiences .heading h2
+{
+    color: var(--couleur-generale);
+}
+
+#experiences i
+{
+    font-size: 18px;
+    padding-right: 10px;
+}
+
+.experience
+{
+    padding-bottom: 50px;
+}
+
+.experience-container
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-container .traitcouleur
+{
+    width: 60%;
+    margin-bottom: 50px;
+    height: 2px;
+}
+
+.experience-container .col-left,.col-right
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding:  0 50px;
+}
+
+.experience-container .col-left
+{
+    left: -1500px;
+}
+
+.experience-container .col-right
+{
+    left: 2000px;
+}
 
 /* FOOTER */
 footer
