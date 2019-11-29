@@ -100,10 +100,13 @@ header .heading {
     transform: translateX(-50%);
 }
 
-.homepage-picture
+.homepage
 {
     width: 100%;
     height: 100vh;
+    background-image: url('../images/computerHomePage.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* MENU */

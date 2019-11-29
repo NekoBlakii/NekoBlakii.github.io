@@ -71,19 +71,19 @@ $(function(){
                 anime({
                     targets: '.formation1',
                     translateX: 1500,
-                    delay: anime.stagger(500),
+                    delay: anime.stagger(100),
                     easing: 'easeInOutSine'
                 });
                 anime({
                     targets: '.formation2',
                     translateY: 1500,
-                    delay: anime.stagger(500),
+                    delay: anime.stagger(100),
                     easing: 'easeInOutSine'
                 });
                 anime({
                     targets: '.formation3',
                     translateX: -2000,
-                    delay: anime.stagger(500),
+                    delay: anime.stagger(100),
                     easing: 'easeInOutSine'
                 });
                 isOver = true
