@@ -532,17 +532,17 @@ header .heading {
     color: var(--couleur-generale);
 }
 
-.form1
+.formation1 .desktop
 {
     left: -1500px;
 }
 
-.form2
+.formation2 .desktop
 {
     top: -1500px;
 }
 
-.form3
+.formation3 .desktop
 {
     left: 2000px;
 }
@@ -584,20 +584,25 @@ header .heading {
     height: 2px;
 }
 
-.experience-container .col-left,.col-right
+.experience-container .col-left, .col-right
+{
+    padding:  0 50px;
+}
+
+.experience-container .col-left .desktop ,.col-right .desktop
 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding:  0 50px;
+    
 }
 
-.experience-container .col-left
+.col-left .desktop
 {
     left: -1500px;
 }
 
-.experience-container .col-right
+.col-right .desktop
 {
     left: 2000px;
 }

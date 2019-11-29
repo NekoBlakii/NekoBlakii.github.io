@@ -1,12 +1,19 @@
 $(function(){
     $(window).scrollTop(0);
 
+    var isFinish = false;
+    var isOver = false;
+    var isEnded= false;
+
     if(window.matchMedia("(max-width: 768px)").matches)
     {
         let desktopElements = document.querySelectorAll(".desktop");
         desktopElements.forEach(element => {
             element.classList.remove("desktop");
         });
+        isFinish = true;
+        isOver = true;
+        isEnded= true;
     }
 
     let navbar = document.getElementById('navbar-menu');
@@ -19,9 +26,6 @@ $(function(){
     });
 
 
-    var isFinish = false;
-    var isOver = false;
-    var isEnded= false;
 
     $(window).scroll(function() {
 
@@ -38,48 +42,7 @@ $(function(){
            return isScrolled;
         };
 
-        if(window.matchMedia("(max-width: 768px)").matches)
-        {
-            /*
-            if(isScrolled('#skillDescription') && !isFinish){
-                anime({
-                    targets: '.logo-skill',
-                    translateX: 1500,
-                    delay: anime.stagger(500),
-                    easing: 'easeInOutSine'
-                });
-                isFinish = true
-            } 
-    
-            if(isScrolled('#formations-container') && !isOver)
-            {
-                anime({
-                    targets: '.formation',
-                    translateX: 1500,
-                    delay: anime.stagger(2000, {easing: 'easeInOutSine'}),
-                });
-
-                isOver = true
-            }
-    
-            if(isScrolled('#experiences-container') && !isEnded)
-            {
-                anime({
-                    targets: '.col-left',
-                    translateX: 1500,
-                    delay: anime.stagger(300),
-                    easing: 'easeInOutSine'
-                });
-                anime({
-                    targets: '.col-right',
-                    translateX: -2000,
-                    delay: anime.stagger(300),
-                    easing: 'easeInOutSine'
-                });
-                isEnded = true
-            }*/
-        }
-        else
+        if(!window.matchMedia("(max-width: 768px)").matches)
         {
             if(isScrolled('#skillDescription') && !isFinish){
                 anime({
@@ -108,17 +71,20 @@ $(function(){
                 anime({
                     targets: '.formation1',
                     translateX: 1500,
-                    delay: anime.stagger(2000, {easing: 'easeInOutSine'}),
+                    delay: anime.stagger(500),
+                    easing: 'easeInOutSine'
                 });
                 anime({
                     targets: '.formation2',
                     translateY: 1500,
-                    delay: anime.stagger(2000, {easing: 'easeInOutSine'}),
+                    delay: anime.stagger(500),
+                    easing: 'easeInOutSine'
                 });
                 anime({
                     targets: '.formation3',
                     translateX: -2000,
-                    delay: anime.stagger(2000, {easing: 'easeInOutSine'}),
+                    delay: anime.stagger(500),
+                    easing: 'easeInOutSine'
                 });
                 isOver = true
             }
