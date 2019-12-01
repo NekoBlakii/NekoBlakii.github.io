@@ -100,13 +100,78 @@ header .heading {
     transform: translateX(-50%);
 }
 
+header .heading svg
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
 .homepage
 {
     width: 100%;
     height: 100vh;
-    background-image: url('../images/computerHomePage.jpg');
+    position: relative;
+    /*background-image: url('../images/computerHomePage.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
+    background-color: var(--couleur-flash);
+    overflow: hidden;
+}
+
+#btn-scroll {
+    display: flex;
+    width: 70px;
+    height: 70px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #fff;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.hidden
+{
+    display: none;
+}
+
+#btn-scroll:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    font-size: 40px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.heading a 
+{
+    
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    margin-top:80px;
+}
+
+#triangle-left
+{
+    display : inline-block;
+    border-right : 200px solid transparent;
+    border-bottom : 200px solid var(--couleur-generale);
+    position: absolute;
+    left: -1000px;
+    z-index: -1;
+}
+
+#triangle-right{
+    display : inline-block;
+    border-top : 200px solid var(--couleur-generale);
+    border-left : 200px solid transparent;
+    position: absolute;
+    left: 1500px;
+    z-index: -1;
 }
 
 /* MENU */

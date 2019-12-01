@@ -1,10 +1,10 @@
 $(function(){
-    $(window).scrollTop(0);
-
+    //$(window).scrollTop(0);
+    
     var isFinish = false;
     var isOver = false;
     var isEnded= false;
-
+    
     if(window.matchMedia("(max-width: 768px)").matches)
     {
         let desktopElements = document.querySelectorAll(".desktop");
@@ -16,15 +16,67 @@ $(function(){
         isEnded= true;
     }
 
+        const svgPath = document.querySelectorAll('.path');
+    
+        anime({
+            targets: svgPath,
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 700,
+            delay: (el, i) => { return i * 200 ; }
+            
+        });
+    
+        const svgPath2 = document.querySelectorAll('.path2');
+    
+    anime(
+        {
+            targets: svgPath2,
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 700,
+            delay: (el, i) => { return i * 200 ; },
+            complete: function(){
+                var scrollBtn = document.getElementById('btn-scroll');
+                scrollBtn.classList.remove('hidden');
+            }
+        }
+    );
+
+
+    
+
     let navbar = document.getElementById('navbar-menu');
     document.body.setAttribute("data-offset",navbar.offsetHeight + 2);
 
-    $(".navbar a").on("click",function(event){
+    $(".navbar a, #btn-scroll").on("click",function(event){
         event.preventDefault();
         var hash = this.hash;
         $("html,body").animate({scrollTop: $(hash).offset().top - navbar.offsetHeight },900,function(){})
     });
 
+    anime({
+        targets: '#triangle-left',
+        easing: 'easeInOutSine',
+        duration: 2000,
+        translateX: 1151,
+        scale: {
+            value: 3,
+            easing: 'easeInOutQuart'
+        }
+    });
+
+
+    anime({
+        targets: '#triangle-right',
+        easing: 'easeInOutSine',
+        duration: 2000,
+        translateX: -1351,
+        scale: {
+            value: 3,
+            easing: 'easeInOutQuart'
+        }
+    });
 
 
     $(window).scroll(function() {
