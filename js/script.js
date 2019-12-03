@@ -1,10 +1,32 @@
 $(function(){
-    //$(window).scrollTop(0);
-    
+
+    var y_offsetWhenScrollDisabled=0;
+
+    function disableScrollOnBody(){
+        y_offsetWhenScrollDisabled= $(window).scrollTop();
+        $('body').addClass('scrollDisabled').css('margin-top', -y_offsetWhenScrollDisabled);
+    }
+
+    function enableScrollOnBody(){
+        $('body').removeClass('scrollDisabled').css('margin-top', 0);
+        $(window).scrollTop(y_offsetWhenScrollDisabled);
+    }
+
     var isFinish = false;
     var isOver = false;
     var isEnded= false;
-    
+
+    function hideNavBar()
+    {
+        document.getElementById("navbar-menu").style.top = "-50px";
+    }
+
+    function showNavBar()
+    {
+        document.getElementById("navbar-menu").style.top = "0px";
+    }
+
+
     if(window.matchMedia("(max-width: 768px)").matches)
     {
         let desktopElements = document.querySelectorAll(".desktop");
@@ -16,35 +38,109 @@ $(function(){
         isEnded= true;
     }
 
+    function animeText()
+    {
+        var svgName = document.getElementById('svg-name');
+        svgName.classList.remove('hidden');
+
+        var svgJob = document.getElementById('svg-job');
+        svgJob.classList.remove('hidden');
+
         const svgPath = document.querySelectorAll('.path');
-    
         anime({
             targets: svgPath,
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: 'easeInOutSine',
             duration: 700,
             delay: (el, i) => { return i * 200 ; }
-            
         });
-    
+
         const svgPath2 = document.querySelectorAll('.path2');
-    
-    anime(
-        {
-            targets: svgPath2,
-            strokeDashoffset: [anime.setDashoffset, 0],
-            easing: 'easeInOutSine',
-            duration: 700,
-            delay: (el, i) => { return i * 200 ; },
-            complete: function(){
-                var scrollBtn = document.getElementById('btn-scroll');
-                scrollBtn.classList.remove('hidden');
+        anime(
+            {
+                targets: svgPath2,
+                strokeDashoffset: [anime.setDashoffset, 0],
+                easing: 'easeInOutSine',
+                duration: 700,
+                delay: (el, i) => { return i * 200 ; },
+                complete: function(){
+                    var scrollBtn = document.getElementById('btn-scroll');
+                    scrollBtn.style.opacity = "1";
+                    showNavBar();
+                    enableScrollOnBody();
+                }
             }
-        }
-    );
+        );
+    }
 
+$.fn.WheelLoader = function(o) {
+    disableScrollOnBody();
+    var _this = this[0],
+        $this = $(this),
+        WheelLoader = {
+            $progress: null,
+            $text: null,
 
-    
+            init: function() {
+                this.$progress = $this.find("progress");
+                this.$text = $(document.getElementById("loading-txt"));
+                this.reset();
+            },
+
+            load: function(i) {
+                setTimeout(function() {
+                    i += 1;
+                    _this.$progress.val(i);
+                if (i == 100)
+                {
+                    _this.close();
+                }
+                else
+                    _this.load(i);
+                }, 40);
+            },
+
+            reset: function() {
+                _this.$text.animate({
+                    marginTop: "0",
+                    opacity: 1
+                }, 300, function() {
+
+                    _this.$progress.val(0).show().animate({
+                        width: "100%"
+                }, 500, function() {
+                    _this.load(0);
+                });
+            });
+        },
+
+        close: function() {
+            _this.$progress.animate({
+                width: "0px"
+            },
+             500, function() {
+                $(this).hide();
+            });
+
+            _this.$text.animate({
+                opacity: 0
+            },
+             500, function() {
+                _this.$text.hide()
+                animeText();
+
+            });
+        },
+        };
+
+    _this.WheelLoader = WheelLoader,
+        _this = _this.WheelLoader,
+        _this.init();
+    };
+
+    $(document).ready(function() {
+        $(".loading").WheelLoader();
+    });
 
     let navbar = document.getElementById('navbar-menu');
     document.body.setAttribute("data-offset",navbar.offsetHeight + 2);
@@ -55,7 +151,7 @@ $(function(){
         $("html,body").animate({scrollTop: $(hash).offset().top - navbar.offsetHeight },900,function(){})
     });
 
-    anime({
+/*    anime({
         targets: '#triangle-left',
         easing: 'easeInOutSine',
         duration: 2000,
@@ -76,18 +172,15 @@ $(function(){
             value: 3,
             easing: 'easeInOutQuart'
         }
-    });
+    });*/
 
 
     $(window).scroll(function() {
 
         const isScrolled = function(section)
         {
-           var hT = $(section).offset().top,
-                    hH = $(section).outerHeight(),
-                    wH = $(window).height(),
-                    wS = $(this).scrollTop();
-   
+            var hT = $(section).offset().top;
+            var hH = $(section).outerHeight();
             var scroll = $(window).scrollTop();
 
            var isScrolled = (hT-hH < scroll) && (hT+hH >= scroll);
@@ -116,8 +209,8 @@ $(function(){
                     easing: 'easeInOutSine'
                 });
                 isFinish = true
-            } 
-    
+            }
+
             if(isScrolled('#formations-container') && !isOver)
             {
                 anime({
@@ -140,7 +233,7 @@ $(function(){
                 });
                 isOver = true
             }
-    
+
             if(isScrolled('#experiences-container') && !isEnded)
             {
                 anime({

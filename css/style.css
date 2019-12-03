@@ -3,13 +3,19 @@
 body
 {
     position: relative;
-    font-family: 'Lato', sans-serif; 
-    --couleur-generale :  #292c2e; 
-    --couleur-sombre :  #FFF; 
+    font-family: 'Lato', sans-serif;
+    --couleur-generale :  #292c2e;
+    --couleur-sombre :  #FFF;
     --couleur-fond : #F5F5F5;
     --couleur-text : #7c7c7c;
     --couleur-flash : #C96567;
     --couleur-flash : #FFD376;
+}
+
+.scrollDisabled {
+    position: fixed;
+    margin-top: 0;
+    width: 100%;
 }
 
 body .row
@@ -105,6 +111,7 @@ header .heading svg
     display: flex;
     width: 100%;
     align-items: center;
+
 }
 
 .homepage
@@ -121,6 +128,9 @@ header .heading svg
 
 #btn-scroll {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
     width: 70px;
     height: 70px;
     border: 2px solid #fff;
@@ -146,9 +156,38 @@ header .heading svg
     transition: all .3s ease-in-out;
 }
 
-.heading a 
+.homepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.homepage .container
 {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading{
+    width: 70%;
+}
+
+#loading-txt
+{
+    opacity: 0;
+    margin-top: -50px;
+    text-align: center;
+}
+
+.heading
+{
+    width: 100%;
+}
+
+.heading a
+{
     align-items: center;
     justify-content: center;
     margin:auto;
@@ -174,6 +213,38 @@ header .heading svg
     z-index: -1;
 }
 
+/* PROGRESSBAR */
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin: 10px auto;
+    clear: left;
+    display: inline-block;
+}
+
+  progress[value]::-webkit-progress-value {
+    background: #fff;
+    border-radius: 2px;
+}
+
+  progress[value]::-webkit-progress-bar {
+    border-radius: 10px;
+    border: 2px solid #fff
+}
+  /* Pre-animation cycle */
+
+progress {
+    width: 0;
+    display: none;
+}
+
+/* Change color */
+
+progress[value]::-webkit-progress-bar {
+  background: var(--couleur-flash);
+}
+
 /* MENU */
 .navbar
 {
@@ -182,6 +253,8 @@ header .heading svg
     font-weight: bold;
     letter-spacing: 4px;
     text-transform: uppercase;
+    transition: top 0.3s;
+    top: -50px;
 }
 
 .navbar .navbar-nav
@@ -284,7 +357,7 @@ header .heading svg
     display: inline-block;
     margin-top: 20px;
     padding: 10px 40px; /* espace entre le bord et le texte */
-    transition: all 0.3s ease-in 0s;
+    transition: all 2s ease-in 0s;
 }
 
 .button1:hover
@@ -399,9 +472,9 @@ header .heading svg
 
 
 @keyframes clignote{
-    0% {opacity: 0.7;} 
-    50% {opacity: 0.25;} 
-    100% {opacity: 0.7;} 
+    0% {opacity: 0.7;}
+    50% {opacity: 0.25;}
+    100% {opacity: 0.7;}
 }
 
 
@@ -662,7 +735,7 @@ header .heading svg
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    
+
 }
 
 .col-left .desktop
