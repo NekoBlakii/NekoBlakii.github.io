@@ -151,29 +151,6 @@ $.fn.WheelLoader = function(o) {
         $("html,body").animate({scrollTop: $(hash).offset().top - navbar.offsetHeight },900,function(){})
     });
 
-/*    anime({
-        targets: '#triangle-left',
-        easing: 'easeInOutSine',
-        duration: 2000,
-        translateX: 1151,
-        scale: {
-            value: 3,
-            easing: 'easeInOutQuart'
-        }
-    });
-
-
-    anime({
-        targets: '#triangle-right',
-        easing: 'easeInOutSine',
-        duration: 2000,
-        translateX: -1351,
-        scale: {
-            value: 3,
-            easing: 'easeInOutQuart'
-        }
-    });*/
-
 
     $(window).scroll(function() {
 
