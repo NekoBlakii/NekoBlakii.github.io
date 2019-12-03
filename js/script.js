@@ -97,7 +97,7 @@ $.fn.WheelLoader = function(o) {
                 }
                 else
                     _this.load(i);
-                }, 40);
+                }, 10);
             },
 
             reset: function() {
