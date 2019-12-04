@@ -38,100 +38,64 @@ $(function(){
         isEnded= true;
     }
 
-    function animeText()
-    {
-        var svgName = document.getElementById('svg-name');
-        svgName.classList.remove('hidden');
 
-        var svgJob = document.getElementById('svg-job');
-        svgJob.classList.remove('hidden');
+    $.fn.WheelLoader = function(o) {
+        disableScrollOnBody();
+        var _this = this[0],
+            $this = $(this),
+            WheelLoader = {
+                $progress: null,
+                $text: null,
 
-        const svgPath = document.querySelectorAll('.path');
-        anime({
-            targets: svgPath,
-            strokeDashoffset: [anime.setDashoffset, 0],
-            easing: 'easeInOutSine',
-            duration: 700,
-            delay: (el, i) => { return i * 200 ; }
-        });
+                init: function() {
+                    this.$progress = $this.find("progress");
+                    this.$text = $(document.getElementById("loading-txt"));
+                    this.reset();
+                },
 
-        const svgPath2 = document.querySelectorAll('.path2');
-        anime(
-            {
-                targets: svgPath2,
-                strokeDashoffset: [anime.setDashoffset, 0],
-                easing: 'easeInOutSine',
-                duration: 700,
-                delay: (el, i) => { return i * 200 ; },
-                complete: function(){
-                    var scrollBtn = document.getElementById('btn-scroll');
-                    scrollBtn.style.opacity = "1";
-                    showNavBar();
-                    enableScrollOnBody();
-                }
-            }
-        );
-    }
+                load: function(i) {
+                    setTimeout(function() {
+                        i += 1;
+                        _this.$progress.val(i);
+                    if (i == 100)
+                    {
+                        _this.close();
+                    }
+                    else
+                        _this.load(i);
+                    }, 10);
+                },
 
-$.fn.WheelLoader = function(o) {
-    disableScrollOnBody();
-    var _this = this[0],
-        $this = $(this),
-        WheelLoader = {
-            $progress: null,
-            $text: null,
+                reset: function() {
+                    _this.$text.animate({
+                        marginTop: "0",
+                        opacity: 1
+                    }, 300, function() {
 
-            init: function() {
-                this.$progress = $this.find("progress");
-                this.$text = $(document.getElementById("loading-txt"));
-                this.reset();
-            },
-
-            load: function(i) {
-                setTimeout(function() {
-                    i += 1;
-                    _this.$progress.val(i);
-                if (i == 100)
-                {
-                    _this.close();
-                }
-                else
-                    _this.load(i);
-                }, 10);
-            },
-
-            reset: function() {
-                _this.$text.animate({
-                    marginTop: "0",
-                    opacity: 1
-                }, 300, function() {
-
-                    _this.$progress.val(0).show().animate({
-                        width: "100%"
-                }, 500, function() {
-                    _this.load(0);
+                        _this.$progress.val(0).show().animate({
+                            width: "100%"
+                    }, 500, function() {
+                        _this.load(0);
+                    });
                 });
-            });
-        },
-
-        close: function() {
-            _this.$progress.animate({
-                width: "0px"
             },
-             500, function() {
-                $(this).hide();
-            });
 
-            _this.$text.animate({
-                opacity: 0
+            close: function() {
+                _this.$progress.animate({
+                    width: "0px"
+                },
+                500, function() {
+                    $(this).hide();
+                });
+
+                _this.$text.animate({
+                    opacity: 0
+                },
+                500, function() {
+                    _this.$text.hide()
+                });
             },
-             500, function() {
-                _this.$text.hide()
-                animeText();
-
-            });
-        },
-        };
+    };
 
     _this.WheelLoader = WheelLoader,
         _this = _this.WheelLoader,
@@ -141,6 +105,40 @@ $.fn.WheelLoader = function(o) {
     $(document).ready(function() {
         $(".loading").WheelLoader();
     });
+
+    var svgName = document.getElementById('svg-name');
+    svgName.classList.remove('hidden');
+
+    var svgJob = document.getElementById('svg-job');
+    svgJob.classList.remove('hidden');
+
+    /* ANIMATION NOM */
+    const svgPath = document.querySelectorAll('.path');
+    const svgText = anime({
+        targets: svgPath,
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 700,
+        delay: (el, i) => { return i * 200 ; }
+    });
+
+    /* ANIMATION METIER */
+    const svgPath2 = document.querySelectorAll('.path2');
+    anime(
+        {
+            targets: svgPath2,
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 700,
+            delay: (el, i) => { return i * 200 ; },
+            complete: function(){
+                var scrollBtn = document.getElementById('btn-scroll');
+                scrollBtn.style.opacity = "1";
+                showNavBar();
+                enableScrollOnBody();
+            }
+        }
+    );
 
     let navbar = document.getElementById('navbar-menu');
     document.body.setAttribute("data-offset",navbar.offsetHeight + 2);
