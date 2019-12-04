@@ -1,6 +1,20 @@
 $(function(){
+    var isRefresh = false;
 
-    var y_offsetWhenScrollDisabled=0;
+    if (performance.navigation.type == 1 && ($(window).scrollTop() > 0)) {
+        isRefresh = true;
+        showNavBar();
+        var svgName = document.getElementById('svg-name');
+        svgName.classList.remove('hidden');
+
+        var svgJob = document.getElementById('svg-job');
+        svgJob.classList.remove('hidden');
+
+        var scrollBtn = document.getElementById('btn-scroll');
+        scrollBtn.style.opacity = "1";
+    }
+
+    var y_offsetWhenScrollDisabled = 0;
 
     function disableScrollOnBody(){
         y_offsetWhenScrollDisabled= $(window).scrollTop();
@@ -16,19 +30,16 @@ $(function(){
     var isOver = false;
     var isEnded= false;
 
-    function hideNavBar()
-    {
+    function hideNavBar(){
         document.getElementById("navbar-menu").style.top = "-50px";
     }
 
-    function showNavBar()
-    {
+    function showNavBar(){
         document.getElementById("navbar-menu").style.top = "0px";
     }
 
 
-    if(window.matchMedia("(max-width: 768px)").matches)
-    {
+    if(window.matchMedia("(max-width: 768px)").matches){
         let desktopElements = document.querySelectorAll(".desktop");
         desktopElements.forEach(element => {
             element.classList.remove("desktop");
@@ -39,106 +50,110 @@ $(function(){
     }
 
 
-    $.fn.WheelLoader = function(o) {
-        disableScrollOnBody();
-        var _this = this[0],
-            $this = $(this),
-            WheelLoader = {
-                $progress: null,
-                $text: null,
 
-                init: function() {
-                    this.$progress = $this.find("progress");
-                    this.$text = $(document.getElementById("loading-txt"));
-                    this.reset();
-                },
+    if(!isRefresh)
+    {
+        $.fn.WheelLoader = function(o) {
+            disableScrollOnBody();
+            var _this = this[0],
+                $this = $(this),
+                WheelLoader = {
+                    $progress: null,
+                    $text: null,
 
-                load: function(i) {
-                    setTimeout(function() {
-                        i += 1;
-                        _this.$progress.val(i);
-                    if (i == 100)
-                    {
-                        _this.close();
-                    }
-                    else
-                        _this.load(i);
-                    }, 10);
-                },
+                    init: function() {
+                        this.$progress = $this.find("progress");
+                        this.$text = $(document.getElementById("loading-txt"));
+                        this.reset();
+                    },
 
-                reset: function() {
-                    _this.$text.animate({
-                        marginTop: "0",
-                        opacity: 1
-                    }, 300, function() {
+                    load: function(i) {
+                        setTimeout(function() {
+                            i += 1;
+                            _this.$progress.val(i);
+                        if (i == 100)
+                        {
+                            _this.close();
+                        }
+                        else
+                            _this.load(i);
+                        }, 10);
+                    },
 
-                        _this.$progress.val(0).show().animate({
-                            width: "100%"
-                    }, 500, function() {
-                        _this.load(0);
+                    reset: function() {
+                        _this.$text.animate({
+                            marginTop: "0",
+                            opacity: 1
+                        }, 300, function() {
+
+                            _this.$progress.val(0).show().animate({
+                                width: "100%"
+                        }, 500, function() {
+                            _this.load(0);
+                        });
                     });
-                });
-            },
-
-            close: function() {
-                _this.$progress.animate({
-                    width: "0px"
                 },
-                500, function() {
-                    $(this).hide();
-                });
 
-                _this.$text.animate({
-                    opacity: 0
+                close: function() {
+                    _this.$progress.animate({
+                        width: "0px"
+                    },
+                    500, function() {
+                        $(this).hide();
+                    });
+
+                    _this.$text.animate({
+                        opacity: 0
+                    },
+                    500, function() {
+                        _this.$text.hide()
+                    });
                 },
-                500, function() {
-                    _this.$text.hide()
-                });
-            },
-    };
+        };
 
-    _this.WheelLoader = WheelLoader,
-        _this = _this.WheelLoader,
-        _this.init();
-    };
+        _this.WheelLoader = WheelLoader,
+            _this = _this.WheelLoader,
+            _this.init();
+        };
 
-    $(document).ready(function() {
-        $(".loading").WheelLoader();
-    });
+        $(document).ready(function() {
+            $(".loading").WheelLoader();
+        });
 
-    var svgName = document.getElementById('svg-name');
-    svgName.classList.remove('hidden');
+        var svgName = document.getElementById('svg-name');
+        svgName.classList.remove('hidden');
 
-    var svgJob = document.getElementById('svg-job');
-    svgJob.classList.remove('hidden');
+        var svgJob = document.getElementById('svg-job');
+        svgJob.classList.remove('hidden');
 
-    /* ANIMATION NOM */
-    const svgPath = document.querySelectorAll('.path');
-    const svgText = anime({
-        targets: svgPath,
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutSine',
-        duration: 700,
-        delay: (el, i) => { return i * 200 ; }
-    });
-
-    /* ANIMATION METIER */
-    const svgPath2 = document.querySelectorAll('.path2');
-    anime(
-        {
-            targets: svgPath2,
+        /* ANIMATION NOM */
+        const svgPath = document.querySelectorAll('.path');
+        const svgText = anime({
+            targets: svgPath,
             strokeDashoffset: [anime.setDashoffset, 0],
             easing: 'easeInOutSine',
             duration: 700,
-            delay: (el, i) => { return i * 200 ; },
-            complete: function(){
-                var scrollBtn = document.getElementById('btn-scroll');
-                scrollBtn.style.opacity = "1";
-                showNavBar();
-                enableScrollOnBody();
+            delay: (el, i) => { return i * 200 ; }
+        });
+
+        /* ANIMATION METIER */
+        const svgPath2 = document.querySelectorAll('.path2');
+        anime({
+                targets: svgPath2,
+                strokeDashoffset: [anime.setDashoffset, 0],
+                easing: 'easeInOutSine',
+                duration: 700,
+                delay: (el, i) => { return i * 200 ; },
+                complete: function(){
+                    var scrollBtn = document.getElementById('btn-scroll');
+                    scrollBtn.style.opacity = "1";
+                    showNavBar();
+                    enableScrollOnBody();
+                }
             }
-        }
-    );
+        );
+    }
+
 
     let navbar = document.getElementById('navbar-menu');
     document.body.setAttribute("data-offset",navbar.offsetHeight + 2);
@@ -164,7 +179,7 @@ $(function(){
 
         if(!window.matchMedia("(max-width: 768px)").matches)
         {
-            if(isScrolled('#skillDescription') && !isFinish){
+            if(isScrolled('#skill-description') && !isFinish){
                 anime({
                     targets: '.logo-front',
                     translateX: 1500,

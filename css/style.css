@@ -75,11 +75,6 @@ section .heading
     padding-bottom: 40px;
 }
 
-section .heading h2
-{
-    text-transform: uppercase;
-}
-
 section:nth-child(2n)
 {
     background-color: var(--couleur-fond);
@@ -211,7 +206,7 @@ header .heading svg
     align-items: center;
     justify-content: center;
     margin:auto;
-    margin-top:80px;
+    margin-top:20px;
 }
 
 /* PROGRESSBAR */
@@ -339,7 +334,6 @@ progress[value]::-webkit-progress-bar {
 {
     font-size: 24px;
     color: var(--couleur-generale);
-    text-transform: uppercase;
 }
 
 #about .heading h3
@@ -380,8 +374,8 @@ progress[value]::-webkit-progress-bar {
 }
 
 .logo svg {
-    width: 80px;
-    height:80px;
+    width: 70px;
+    height:70px;
     transition-duration: 0.5s;
     fill : #333;
 }
@@ -433,22 +427,22 @@ progress[value]::-webkit-progress-bar {
     padding-left : 40px;
 }
 
-#skillDescription{
-    font-size: 30px;
+#skill-description{
+    font-size: 24px;
 }
 
-#skillDescription div h2
+#skill-description div h2
 {
     padding-bottom: 20px;
 }
 
-#skillDescription .logo
+#skill-description .logo
 {
     display: flex;
     align-items: center;
 }
 
-#skillDescription .desktop
+#skill-description .desktop
 {
     position: absolute;
     left: -1500px;
