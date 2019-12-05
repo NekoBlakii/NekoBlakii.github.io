@@ -34,8 +34,6 @@ $(function(){
     var isEnded= false;
 
     if(window.matchMedia("(max-width: 768px)").matches){
-
-
         let desktopElements = document.querySelectorAll(".desktop");
         desktopElements.forEach(element => {
             element.classList.remove("desktop");
@@ -70,6 +68,13 @@ $(function(){
 
     function showNavBar(){
         document.getElementById("navbar-menu").style.top = "0px";
+    }
+
+    function removeDesktop(){
+        let desktopElements = document.querySelectorAll(".desktop");
+        desktopElements.forEach(element => {
+            element.classList.remove("desktop");
+        });
     }
 
     window.onresize = ( ) => {
