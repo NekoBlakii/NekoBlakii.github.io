@@ -369,10 +369,6 @@ progress[value]::-webkit-progress-bar {
     transform:  translate(-293px, 0);
 }
 
-#skills .row {
-    position: relative;
-}
-
 .logo svg {
     width: 70px;
     height:70px;
@@ -423,6 +419,12 @@ progress[value]::-webkit-progress-bar {
     margin-left: 20%;
 }
 
+.logo-skill:hover
+{
+    -webkit-transform:scale(1.1);
+    transform:scale(1.1);
+}
+
 .titleSkill {
     padding-left : 40px;
 }
@@ -442,9 +444,9 @@ progress[value]::-webkit-progress-bar {
     align-items: center;
 }
 
+
 #skill-description .desktop
 {
-    position: absolute;
     left: -1500px;
 }
 

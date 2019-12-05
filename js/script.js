@@ -1,7 +1,8 @@
 $(function(){
     var isRefresh = false;
 
-    showWithoutAnimation();
+
+    var isAnimated = false;
 
     if (performance.navigation.type == 1 && ($(window).scrollTop() > 0)) {
         isRefresh = true;
@@ -32,15 +33,33 @@ $(function(){
     var isOver = false;
     var isEnded= false;
 
+    if(window.matchMedia("(max-width: 768px)").matches){
+
+
+        let desktopElements = document.querySelectorAll(".desktop");
+        desktopElements.forEach(element => {
+            element.classList.remove("desktop");
+        });
+
+        isFinish = true;
+        isOver = true;
+        isEnded= true;
+    }
+
     function showWithoutAnimation(){
         if(window.matchMedia("(max-width: 768px)").matches){
-            let desktopElements = document.querySelectorAll(".desktop");
+
+
+            let desktopElements = document.querySelectorAll(".desktop , #skill-description > div > *, #formations-container > div, #experiences-container > div > div");
             desktopElements.forEach(element => {
                 element.classList.remove("desktop");
+                element.setAttribute('style','');
             });
+
             isFinish = true;
             isOver = true;
             isEnded= true;
+
         }
     }
 
@@ -189,24 +208,25 @@ $(function(){
         {
             if(isScrolled('#skill-description') && !isFinish){
                 anime({
-                    targets: '.logo-front',
+                    targets: '.front-end > *',
                     translateX: 1500,
                     delay: anime.stagger(500),
                     easing: 'easeInOutSine'
                 });
                 anime({
-                    targets: '.logo-back',
+                    targets: '.back-end > *',
                     translateX: 1500,
                     delay: anime.stagger(500),
                     easing: 'easeInOutSine'
                 });
                 anime({
-                    targets: '.logo-extra',
+                    targets: '.extra > *',
                     translateX: 1500,
                     delay: anime.stagger(500),
                     easing: 'easeInOutSine'
                 });
                 isFinish = true
+                isAnimated = true;
             }
 
             if(isScrolled('#formations-container') && !isOver)
@@ -230,6 +250,7 @@ $(function(){
                     easing: 'easeInOutSine'
                 });
                 isOver = true
+                isAnimated = true;
             }
 
             if(isScrolled('#experiences-container') && !isEnded)
@@ -247,6 +268,7 @@ $(function(){
                     easing: 'easeInOutSine'
                 });
                 isEnded = true
+                isAnimated = true;
             }
         }
 
