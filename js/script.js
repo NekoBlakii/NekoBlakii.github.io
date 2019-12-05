@@ -1,6 +1,8 @@
 $(function(){
     var isRefresh = false;
 
+    showWithoutAnimation();
+
     if (performance.navigation.type == 1 && ($(window).scrollTop() > 0)) {
         isRefresh = true;
         showNavBar();
@@ -30,6 +32,19 @@ $(function(){
     var isOver = false;
     var isEnded= false;
 
+    function showWithoutAnimation(){
+        if(window.matchMedia("(max-width: 768px)").matches){
+            let desktopElements = document.querySelectorAll(".desktop");
+            desktopElements.forEach(element => {
+                element.classList.remove("desktop");
+            });
+            isFinish = true;
+            isOver = true;
+            isEnded= true;
+        }
+    }
+
+
     function hideNavBar(){
         document.getElementById("navbar-menu").style.top = "-50px";
     }
@@ -38,16 +53,9 @@ $(function(){
         document.getElementById("navbar-menu").style.top = "0px";
     }
 
-
-    if(window.matchMedia("(max-width: 768px)").matches){
-        let desktopElements = document.querySelectorAll(".desktop");
-        desktopElements.forEach(element => {
-            element.classList.remove("desktop");
-        });
-        isFinish = true;
-        isOver = true;
-        isEnded= true;
-    }
+    window.onresize = ( ) => {
+        showWithoutAnimation();
+    };
 
 
 
