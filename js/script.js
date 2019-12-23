@@ -81,8 +81,6 @@ $(function(){
         showWithoutAnimation();
     };
 
-
-
     if(!isRefresh)
     {
         $.fn.WheelLoader = function(o) {
@@ -196,6 +194,25 @@ $(function(){
         $("html,body").animate({scrollTop: $(hash).offset().top - navbar.offsetHeight },900,function(){})
     });
 
+    
+    $("#portfolio .portfolio-btns a").on("click",function(event){
+        let prevSelect = document.getElementsByClassName('btn-selected');
+        prevSelect[0].classList.remove('btn-selected');
+        this.classList.add('btn-selected');
+
+        switch(this.id)
+        {
+            case 'portfolio-btn-all':
+                console.log("all");
+                break;
+            case 'portfolio-btn-front':
+                console.log("front");
+                break;
+            case 'portfolio-btn-back':
+                console.log("back");
+                break;       
+        }
+    });
 
     $(window).scroll(function() {
 

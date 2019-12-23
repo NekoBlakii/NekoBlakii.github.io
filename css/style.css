@@ -526,7 +526,6 @@ progress[value]::-webkit-progress-bar {
     transition: all 0.3s ease-in 0s;
 }
 
-
 #portfolio .button-portfolio:hover
 {
     background-color: #fff;
@@ -545,18 +544,27 @@ a, a:hover
 {
     display: flex;
     padding-bottom: 30px;
-    
+    justify-content: center;
 }
 
 .portfolio-btns li
 {
     padding: 15px;
-    
+}
+
+.portfolio-btns a
+{
+    cursor: pointer;
+}
+
+.btn-selected
+{
+    background-color: var(--couleur-flash);
 }
 
 .portfolio-btns li:hover
 {
-    background-color: var(--couleur-flash);
+    background-color: rgb(255, 200, 80);
 }
 
 .card-group
