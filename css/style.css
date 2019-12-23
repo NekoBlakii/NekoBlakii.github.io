@@ -550,6 +550,8 @@ a, a:hover
 .portfolio-btns li
 {
     padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .portfolio-btns a
@@ -577,7 +579,6 @@ a, a:hover
 .card
 {
     display: flex;
-    flex-basis: 30%;
     cursor: pointer;
     /*border-bottom: 3px solid var(--couleur-fond);
     border-left: 3px solid var(--couleur-fond);

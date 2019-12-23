@@ -194,7 +194,7 @@ $(function(){
         $("html,body").animate({scrollTop: $(hash).offset().top - navbar.offsetHeight },900,function(){})
     });
 
-    
+    /* CLICK BUTTON SELECTION TYPE DE PROJETS */
     $("#portfolio .portfolio-btns a").on("click",function(event){
         let prevSelect = document.getElementsByClassName('btn-selected');
         prevSelect[0].classList.remove('btn-selected');
@@ -203,16 +203,40 @@ $(function(){
         switch(this.id)
         {
             case 'portfolio-btn-all':
-                console.log("all");
+                removeBySkills('all');
                 break;
             case 'portfolio-btn-front':
-                console.log("front");
+                removeBySkills('front');
                 break;
             case 'portfolio-btn-back':
-                console.log("back");
+                removeBySkills('back');
                 break;       
         }
     });
+
+    function removeBySkills(skills)
+    {
+        let projects = document.querySelectorAll(".project");
+        projects.forEach(project => {
+            if(!project.classList.contains(skills))
+            {
+                project.classList.add('hidden');
+            }else
+            {
+                project.classList.remove('hidden');
+            }
+        });
+    }
+
+    /* CLICK SUR UN PROJET */
+    $(".project").on("click",function(event){
+        let modal = document.getElementById('modal');
+        console.log(modal.querySelector('.modal-title'));
+        modal.querySelector('.modal-title').innerHTML = this.innerText;
+
+        $('#modal').modal('show');
+    });
+
 
     $(window).scroll(function() {
 
