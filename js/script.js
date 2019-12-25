@@ -228,16 +228,15 @@ $(function(){
         });
     }
 
-    $.getJSON( "portfolio.json", function( json ) {
-        console.log( "JSON Data received, name is " + json.name);
-    });
-    
-
     /* CLICK SUR UN PROJET */
     $(".project").on("click",function(event){
         let modal = document.getElementById('modal');
-        console.log(modal.querySelector('.modal-title'));
         modal.querySelector('.modal-title').innerHTML = this.innerText;
+
+        name = this.id;
+        $.getJSON( "/json/portfolio.json", function( json ) {
+            console.log( "JSON : " + json.name);
+        });
 
         $('#modal').modal('show');
     });
