@@ -228,7 +228,12 @@ $(function(){
         });
     }
 
+    /* ON RECUPERE LES DONNEES DE NOTRE JSON */
     var urlJSON = "https://nekoblakii.github.io/json/portfolio.json";
+    var request = new XMLHttpRequest();
+    request.open('GET', urlJSON);
+    request.responseType = 'json';
+    request.send();
 
     /* CLICK SUR UN PROJET */
     $(".project").on("click",function(event){
@@ -236,11 +241,21 @@ $(function(){
         modal.querySelector('.modal-title').innerHTML = this.innerText;
 
         name = this.id;
-        console.log(this);
-        console.log(name);
+  
+        var json = request.response;
+
+        let body = modal.querySelector('.modal-body');
+        body.innerHTML = '<div>' + json[name].description + '</div>';
+        body.innerHTML += '<div class="modal-screenshots"><img src="' + json[name].screenshots[0] + '" alt="..."></div>'
+
+        json[name].tags.forEach(tag => {
+            body.innerHTML += '<div class="modal-tag">' + tag + '</div>';
+        });
+
+        /* UNIQUEMENT EN LIGNE
         $.getJSON( "/json/portfolio.json", function( json ) {
             console.log( "JSON : " + json.name.description);
-        });
+        });*/
 
         $('#modal').modal('show');
     });

@@ -569,6 +569,18 @@ a, a:hover
     background-color: rgb(255, 200, 80);
 }
 
+#portfolio .modal-screenshots img
+{
+    width: 100%;
+}
+
+#portfolio .modal-tag
+{
+    padding: 15px;
+    background-color: var(--couleur-flash);
+    font-weight: bold;
+}
+
 .card-group
 {
     display: flex;
