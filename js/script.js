@@ -228,14 +228,18 @@ $(function(){
         });
     }
 
+    var urlJSON = "https://nekoblakii.github.io/json/portfolio.json";
+
     /* CLICK SUR UN PROJET */
     $(".project").on("click",function(event){
         let modal = document.getElementById('modal');
         modal.querySelector('.modal-title').innerHTML = this.innerText;
 
         name = this.id;
+        console.log(this);
+        console.log(name);
         $.getJSON( "/json/portfolio.json", function( json ) {
-            console.log( "JSON : " + json.name);
+            console.log( "JSON : " + json.name.description);
         });
 
         $('#modal').modal('show');
