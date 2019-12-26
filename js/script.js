@@ -247,6 +247,13 @@ $(function(){
         let body = modal.querySelector('.modal-body');
         body.innerHTML = '<div>' + json[name].description + '</div>';
         body.innerHTML += '<div class="modal-screenshots"><img class="modal-mainscreenshot" src="' + json[name].screenshots[0] + '" alt="..."></div>'
+
+        body.innerHTML += '<ul class="modal-features>';
+        json[name].features.forEach(tag => {
+            body.innerHTML += '<li class="modal-feature">' + tag + '</li>';
+        });
+        body.innerHTML += '</ul>';
+
         body.innerHTML += '<div class="modal-tags>';
         json[name].tags.forEach(tag => {
             body.innerHTML += '<div class="modal-tag">' + tag + '</div>';
