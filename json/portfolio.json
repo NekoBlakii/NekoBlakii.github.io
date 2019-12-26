@@ -2,7 +2,7 @@
     "toysrus": 
     {
         "tags": ["HTML","CSS","PHP","SQL"],
-        "description": "Site de ventes de jouets. Fonctionnalités : TOP 3 des meilleurs ventes des jouets, Filtre par marques et prix, Détail d'un jouet, Disponibilité par magasin. ",
+        "description": "Site de ventes de jouets. <div>Fonctionnalités : TOP 3 des meilleurs ventes des jouets, Filtre par marques et prix, Détail d'un jouet, Disponibilité par magasin.</div> ",
         "screenshots" : ["images/toysrus.jpg"]
     },
     "airbnb": 

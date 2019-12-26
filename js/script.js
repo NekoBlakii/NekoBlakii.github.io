@@ -246,11 +246,12 @@ $(function(){
 
         let body = modal.querySelector('.modal-body');
         body.innerHTML = '<div>' + json[name].description + '</div>';
-        body.innerHTML += '<div class="modal-screenshots"><img src="' + json[name].screenshots[0] + '" alt="..."></div>'
-
+        body.innerHTML += '<div class="modal-screenshots"><img class="modal-mainscreenshot" src="' + json[name].screenshots[0] + '" alt="..."></div>'
+        body.innerHTML += '<div class="modal-tags>';
         json[name].tags.forEach(tag => {
             body.innerHTML += '<div class="modal-tag">' + tag + '</div>';
         });
+        body.innerHTML += '</div>';
 
         /* UNIQUEMENT EN LIGNE
         $.getJSON( "/json/portfolio.json", function( json ) {
