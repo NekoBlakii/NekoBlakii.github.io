@@ -546,7 +546,6 @@ progress[value]::-webkit-progress-bar {
     min-height: 100%;
 }
 
-
 a, a:hover
 {
     display: block;
@@ -586,13 +585,6 @@ a, a:hover
 #portfolio .modal-screenshots img
 {
     width: 100%;
-}
-
-#portfolio .modal-tag
-{
-    padding: 15px;
-    background-color: var(--couleur-flash);
-    font-weight: bold;
 }
 
 .card-group
@@ -637,7 +629,7 @@ a, a:hover
     border-top-right-radius: 7px;
 }
 
-.card:hover > img 
+.card:hover img
 {
     filter: grayscale(0.5) blur(2px);
 }
@@ -706,7 +698,28 @@ a, a:hover
 }
 
 
+/* MODAL */
 
+#portfolio .modal-mainscreenshot
+{
+    margin-bottom: 20px;
+}
+
+#portfolio .modal-tags
+{
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+}
+
+#portfolio .modal-tag
+{
+    margin: 0 10px;
+    padding: 10px;
+    background-color: var(--couleur-flash);
+    border-radius: 10%;
+    font-weight: bold;
+}
 
 /* FORMATIONS */
 

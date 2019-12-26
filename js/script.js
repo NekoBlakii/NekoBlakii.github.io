@@ -205,11 +205,11 @@ $(function(){
             case 'portfolio-btn-all':
                 removeBySkills('all');
                 break;
-            case 'portfolio-btn-front':
-                removeBySkills('front');
+            case 'portfolio-btn-pro':
+                removeBySkills('pro');
                 break;
-            case 'portfolio-btn-back':
-                removeBySkills('back');
+            case 'portfolio-btn-perso':
+                removeBySkills('perso');
                 break;       
         }
     });
@@ -243,22 +243,27 @@ $(function(){
         name = this.id;
   
         var json = request.response;
-        console.log(json[name]);
-        let body = modal.querySelector('.modal-body');
-        body.innerHTML = '<div>' + json[name].description + '</div>';
-        body.innerHTML += '<div class="modal-screenshots"><img class="modal-mainscreenshot" src="' + json[name].screenshots[0] + '" alt="..."></div>'
-        
-        body.innerHTML += '<ul class="modal-features>';
-        json[name].features.forEach(feature => {
-            body.innerHTML += '<li class="modal-feature">' + feature + '</li>';
-        });
-        body.innerHTML += '</ul>';
 
-        body.innerHTML += '<div class="modal-tags>';
+        let body = modal.querySelector('.modal-body');
+        
+        body.innerHTML = '<div class="modal-screenshots"><img class="modal-mainscreenshot" src="' + json[name].screenshots[0] + '" alt="..."></div>';
+
+        var tags ='';
         json[name].tags.forEach(tag => {
-            body.innerHTML += '<div class="modal-tag">' + tag + '</div>';
+            tags += '<div class="modal-tag">' + tag + '</div>';
         });
-        body.innerHTML += '</div>';
+        body.innerHTML += '<div class="modal-tags">' + tags + '</div>';
+
+        body.innerHTML += '<div>' + json[name].description + '</div>';
+        
+        body.innerHTML += '<h4>Fonctionnalités:</h4>';
+        var features ='';
+        json[name].features.forEach(feature => {
+            features += '<li class="modal-feature">' + feature + '</li>';
+        });
+        body.innerHTML += '<ul class="modal-features">' + features +'</ul>';
+
+        
 
         /* UNIQUEMENT EN LIGNE
         $.getJSON( "/json/portfolio.json", function( json ) {
