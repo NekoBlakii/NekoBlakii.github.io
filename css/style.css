@@ -533,6 +533,20 @@ progress[value]::-webkit-progress-bar {
     color: var(--couleur-generale);
 }
 
+#portfolio .project-img
+{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+#portfolio .project-img img
+{
+    max-width: 100%;
+    min-height: 100%;
+}
+
+
 a, a:hover
 {
     display: block;
@@ -619,7 +633,6 @@ a, a:hover
 
 .card img
 {
-    max-width: 100%;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
