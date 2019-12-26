@@ -10,7 +10,7 @@
     {
         "tags": ["HTML","CSS","PHP","SQL"],
         "description": "Site de locations de chambre.",
-        "features": ["Connexion/Inscription", "Gestion des comptes Voyageur et Hôte", "Voyageur : Liste des chambres avec filtre", "Détail d'une chambre", "Réservation d'une chambre pour une date donnée", "Voir ses réservations". "Hôte : Liste de nos chambres", "Ajouter/Modifier une chambre", "Détail d'une chambre", "Voir nos chambres réservées pour telle période"],
+        "features": ["Connexion/Inscription", "Gestion des comptes Voyageur et Hôte", "Voyageur : Liste des chambres avec filtre", "Détail d'une chambre", "Réservation d'une chambre pour une date donnée", "Voir ses réservations", "Hôte : Liste de nos chambres", "Ajouter/Modifier une chambre", "Détail d'une chambre", "Voir nos chambres réservées pour telle période"],
         "screenshots" : ["images/airbnb.jpg"]
     }
 }
