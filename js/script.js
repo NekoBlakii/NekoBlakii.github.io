@@ -254,7 +254,7 @@ $(function(){
         });
         body.innerHTML += '<div class="modal-tags">' + tags + '</div>';
 
-        body.innerHTML += '<div>' + json[name].description + '</div>';
+        body.innerHTML += '<div class="modal-description">' + json[name].description + '</div>';
         
         body.innerHTML += '<h4>Fonctionnalités:</h4>';
         var features ='';
