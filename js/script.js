@@ -213,24 +213,58 @@ $(function(){
                 break;       
         }
     });
-
+    function cuteHide(el) {
+        el.animate({opacity: '0'}, 150, function(){
+        el.animate({height: '0px'}, 150, function(){
+            el.remove();
+        });
+        });
+    }
     function removeBySkills(skills)
     {
         let projects = document.querySelectorAll(".project");
+        let firstProject = document.querySelector(".project");
         projects.forEach(project => {
             if(!project.classList.contains(skills))
             {
+                
+                /*
+                project.classList.remove('fade-in');
                 project.classList.add('fade-out');
+                $(project).bind('oanimationend animationend webkitAnimationEnd', function() { 
+                    project.classList.add('hidden');
+                });*/
+                
+                $(project).animate({
+                    opacity: 0,
+                    height: '0px'
+                  }, 500, function() {
+                    project.classList.add('hidden');
+                    // Animation complete.
+                });
+
             }else
             {
+                /*
+                project.classList.remove('hidden');
                 project.classList.remove('fade-out');
+                project.classList.add('fade-in');
+                $(project).bind('oanimationend animationend webkitAnimationEnd', function() { 
+                    project.classList.remove('hidden');
+                });*/
+                project.classList.remove('hidden');
+                $(project).animate({
+                    opacity: 1,
+                    height: '100%'
+                  }, 500, function() {
+                    
+                    // Animation complete.
+                });
+                
             }
         });
     }
-
-    $("#portfolio").bind('oanimationend animationend webkitAnimationEnd', function() { 
-        alert("fin") 
-     });
+    
 
     /* ON RECUPERE LES DONNEES DE NOTRE JSON */
     var urlJSON = "https://nekoblakii.github.io/json/portfolio.json";

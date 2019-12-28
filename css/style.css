@@ -161,12 +161,19 @@ header .heading svg
     width: 100%;
     height: 100%;
 }
-
+/*
 .fade-out
 {
     animation-name: fadeOutOpacity;
 	animation-timing-function: ease-in;
-	animation-duration: 2s;
+    animation-duration: 0.5s;
+}
+
+.fade-in
+{
+    animation-name: fadeInOpacity;
+	animation-timing-function: ease-in;
+    animation-duration: 0.5s;
 }
 
 @keyframes fadeOutOpacity {
@@ -177,6 +184,15 @@ header .heading svg
         opacity: 0;
 	}
 }
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+        opacity: 1;
+	}
+}*/
 
 #btn-scroll {
     display: flex;
