@@ -220,13 +220,17 @@ $(function(){
         projects.forEach(project => {
             if(!project.classList.contains(skills))
             {
-                project.classList.add('hidden');
+                project.classList.add('fade-out');
             }else
             {
-                project.classList.remove('hidden');
+                project.classList.remove('fade-out');
             }
         });
     }
+
+    $("#portfolio").bind('oanimationend animationend webkitAnimationEnd', function() { 
+        alert("fin") 
+     });
 
     /* ON RECUPERE LES DONNEES DE NOTRE JSON */
     var urlJSON = "https://nekoblakii.github.io/json/portfolio.json";

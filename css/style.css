@@ -5,6 +5,7 @@ body
     position: relative;
     font-family: 'Lato', sans-serif;
     --couleur-generale :  #292c2e;
+    --couleur-clair : #404447;
     --couleur-sombre :  #FFF;
     --couleur-fond : #F5F5F5;
     --couleur-text : #7c7c7c;
@@ -84,7 +85,7 @@ section
 section .heading
 {
     text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 section:nth-child(2n)
@@ -159,12 +160,22 @@ header .heading svg
     margin-bottom: 50px;
     width: 100%;
     height: 100%;
-
 }
 
-.hidden
+.fade-out
 {
-    display: none;
+    animation-name: fadeOutOpacity;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeOutOpacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+        opacity: 0;
+	}
 }
 
 #btn-scroll {
@@ -316,7 +327,8 @@ progress[value]::-webkit-progress-bar {
 }
 
 .profile-picture > img {
-    width: 35%;
+    border: solid 5px var(--couleur-generale);
+    width: 40%;
 }
 
 .col-about-text
@@ -842,11 +854,7 @@ a, a:hover
 }
 
 /* FOOTER */
-footer
-{
-    background: var(--couleur-generale);
-    padding: 20px 0 40px;
-}
+
 
 footer .glyphicon
 {
@@ -867,4 +875,71 @@ footer h5
     font-size: 15px;
     font-weight: normal;
 }
+
+.footer-rs
+{
+    background-color: var(--couleur-generale);
+    padding: 10px;
+}
+
+.footer-rs svg {
+    width: 40px;
+    height: 40px;
+    transition-duration: 0.5s;
+    fill : var(--couleur-clair);
+}
+
+.footer-rs svg:hover {
+    fill : var(--couleur-flash);
+}
+
+.footer-text
+{
+    background-color: var(--couleur-clair);
+    padding: 15px 0;
+}
+
+.footer-text .container
+{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.footer-text a
+{
+    color: #fff;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/* MENTION LEGALE */
+.header-mentionlegale
+{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    background-color: var(--couleur-generale);
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.mention-legale a
+{
+    color : var(--couleur-generale);
+}
+
+.header-mentionlegale a
+{
+    display: block;
+    color: #fff;
+    padding: 20px;
+}
+
+.header-mentionlegale > a:hover
+{
+    background-color: var(--couleur-clair);
+}
+
+
 
