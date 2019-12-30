@@ -614,6 +614,11 @@ a, a:hover
     position: absolute;
 }
 
+.card img
+{
+    transition: all 0.5s;
+}
+
 .card:hover img
 {
     transform: scale(1.1);
