@@ -697,13 +697,14 @@ a, a:hover
 #portfolio .modal-tags
 {
     display: flex;
+    flex-wrap: wrap;
     padding: 15px;
     justify-content: center;
 }
 
 #portfolio .modal-tag
 {
-    margin: 0 5px;
+    margin: 5px 5px;
     padding: 5px 20px;
     background-color: var(--couleur-flash);
     border-radius: 18px;
