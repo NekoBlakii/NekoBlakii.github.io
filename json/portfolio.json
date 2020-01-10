@@ -1,19 +1,19 @@
 {
-    "toysrus": 
+    "toysrus":
     {
         "tags": ["HTML","CSS","PHP","SQL"],
         "description": "Site de ventes de jouets.",
         "features": ["TOP 3 des meilleurs ventes des jouets", "Filtre par marques et prix", "Détail d'un jouet", "Disponibilité par magasin"],
-        "screenshots" : ["images/toysrus.jpg"]
+        "screenshots" : ["images/demo/toysrus.gif"]
     },
-    "airbnb": 
+    "airbnb":
     {
         "tags": ["HTML","CSS","PHP","SQL"],
         "description": "Site de locations de chambre.",
         "features": ["Connexion/Inscription", "Gestion des comptes Voyageur et Hôte", "Voyageur : Liste des chambres avec filtre", "Détail d'une chambre", "Réservation d'une chambre pour une date donnée", "Voir ses réservations", "Hôte : Liste de nos chambres", "Ajouter/Modifier une chambre", "Détail d'une chambre", "Voir nos chambres réservées pour telle période"],
         "screenshots" : ["images/airbnb.jpg"]
     },
-    "botpokemondiscord": 
+    "botpokemondiscord":
     {
         "tags": ["NODEJS","DISCORDJS"],
         "description": "Ce bot est un bot de jeu sur Discord sur l'univers de Pokémon. Vous pouvez démarrer l'aventure avec un Pokémon proposé aléatoirement et affronter d'autres Pokémon pour devenir le meilleur.",
