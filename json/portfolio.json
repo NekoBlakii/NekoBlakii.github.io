@@ -11,13 +11,20 @@
         "tags": ["HTML","CSS","PHP","SQL"],
         "description": "Site de locations de chambre.",
         "features": ["Connexion/Inscription", "Gestion des comptes Voyageur et Hôte", "Voyageur : Liste des chambres avec filtre", "Détail d'une chambre", "Réservation d'une chambre pour une date donnée", "Voir ses réservations", "Hôte : Liste de nos chambres", "Ajouter/Modifier une chambre", "Détail d'une chambre", "Voir nos chambres réservées pour telle période"],
-        "screenshots" : ["images/airbnb.jpg"]
+        "screenshots" : ["images/demo/airbnb.gif"]
     },
     "botpokemondiscord":
     {
         "tags": ["NODEJS","DISCORDJS"],
         "description": "Ce bot est un bot de jeu sur Discord sur l'univers de Pokémon. Vous pouvez démarrer l'aventure avec un Pokémon proposé aléatoirement et affronter d'autres Pokémon pour devenir le meilleur.",
         "features": ["Inscription", "Choisir un starter parmi 3 choix possibles", "Voir les stats de son starter", "Combat au tour par tour"],
+        "screenshots" : ["images/botpokemon.jpg"]
+    },
+    "leaderboard":
+    {
+        "tags": ["UNITY","C#","PHP","SQL"],
+        "description": "Tableau des scores crées sur Unity.",
+        "features": ["Insertion Pseudo + Score", "Relation BDD -> Unity ", "Mise en place d'un serveur online"],
         "screenshots" : ["images/botpokemon.jpg"]
     }
 }
