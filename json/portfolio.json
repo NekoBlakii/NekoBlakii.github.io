@@ -18,7 +18,7 @@
         "tags": ["NODEJS","DISCORDJS"],
         "description": "Ce bot est un bot de jeu sur Discord sur l'univers de Pokémon. Vous pouvez démarrer l'aventure avec un Pokémon proposé aléatoirement et affronter d'autres Pokémon pour devenir le meilleur.",
         "features": ["Inscription", "Choisir un starter parmi 3 choix possibles", "Voir les stats de son starter", "Combat au tour par tour"],
-        "screenshots" : ["images/botpokemon.jpg"]
+        "screenshots" : ["images/demo/botpokemondiscord.gif"]
     },
     "leaderboard":
     {
