@@ -323,6 +323,12 @@ $(function(){
                     easing: 'easeInOutSine'
                 });
                 anime({
+                    targets: '.framework > *',
+                    translateX: 1500,
+                    delay: anime.stagger(500),
+                    easing: 'easeInOutSine'
+                });
+                anime({
                     targets: '.extra > *',
                     translateX: 1500,
                     delay: anime.stagger(500),

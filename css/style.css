@@ -394,6 +394,14 @@ progress[value]::-webkit-progress-bar {
     fill : #00758f
 }
 
+.logo-angular:hover svg{
+    fill : #b52e31
+}
+
+.logo-symfony:hover svg{
+    fill : #000
+}
+
 .logo-unity:hover svg{
     fill : #000
 }
