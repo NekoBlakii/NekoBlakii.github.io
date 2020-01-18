@@ -402,6 +402,14 @@ progress[value]::-webkit-progress-bar {
     fill : #000
 }
 
+.logo-ionic:hover svg{
+    fill : #498AFF
+}
+
+.logo-wordpress:hover svg{
+    fill : #21759b
+}
+
 .logo-unity:hover svg{
     fill : #000
 }
