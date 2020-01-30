@@ -31,7 +31,7 @@
     {
         "tags": ["JS","Webpack","HTML","SCSS"],
         "description": "Manager de post it.",
-        "features": ["Insertion/Modification/Suppression de Post it", "Gérer les données en local storage"],
-        "screenshots" : ["images/botpokemon.jpg"]
+        "features": ["Insertion/Modification/Suppression de Post it", "Gérer les données dans le local storage"],
+        "screenshots" : ["images/postit.jpg"]
     }
 }
