@@ -26,5 +26,12 @@
         "description": "Tableau des scores crées sur Unity.",
         "features": ["Insertion Pseudo + Score", "Relation BDD -> Unity ", "Mise en place d'un serveur online"],
         "screenshots" : ["images/botpokemon.jpg"]
+    },
+    "postit":
+    {
+        "tags": ["JS","Webpack","HTML","SCSS"],
+        "description": "Manager de post it.",
+        "features": ["Insertion/Modification/Suppression de Post it", "Gérer les données en local storage"],
+        "screenshots" : ["images/botpokemon.jpg"]
     }
 }
