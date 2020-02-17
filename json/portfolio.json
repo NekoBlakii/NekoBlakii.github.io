@@ -34,7 +34,7 @@
         "features": ["Insertion/Modification/Suppression de Post it", "Gérer les données dans le local storage"],
         "screenshots" : ["images/demo/postit.gif"]
     },
-    "eventmap":
+    "mapevent":
     {
         "tags": ["JS","Webpack","MapBoxGL","HTML","SCSS"],
         "description": "Manager d'événements sur une carte'.",
