@@ -26,5 +26,19 @@
         "description": "Tableau des scores crées sur Unity.",
         "features": ["Insertion Pseudo + Score", "Relation BDD -> Unity ", "Mise en place d'un serveur online"],
         "screenshots" : ["images/botpokemon.jpg"]
+    },
+    "postit":
+    {
+        "tags": ["JS","Webpack","HTML","SCSS"],
+        "description": "Manager de post it.",
+        "features": ["Insertion/Modification/Suppression de Post it", "Gérer les données dans le local storage"],
+        "screenshots" : ["images/demo/postit.gif"]
+    },
+    "mapevent":
+    {
+        "tags": ["Typescript","Webpack","MapBoxGL","HTML","SCSS"],
+        "description": "Manager d'événements sur une carte'.",
+        "features": ["Insertion d'événements", "Gestion des dates pour les événements et les couleurs des pointeurs","Gestion des données dans le local storage"],
+        "screenshots" : ["images/demo/eventmap.gif"]
     }
 }
