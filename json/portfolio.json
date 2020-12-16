@@ -37,8 +37,15 @@
     "mapevent":
     {
         "tags": ["Typescript","Webpack","MapBoxGL","HTML","SCSS"],
-        "description": "Manager d'événements sur une carte'.",
+        "description": "Manager d'événements sur une carte.",
         "features": ["Insertion d'événements", "Gestion des dates pour les événements et les couleurs des pointeurs","Gestion des données dans le local storage"],
         "screenshots" : ["images/demo/eventmap.gif"]
+    },
+    "gamejam":
+    {
+        "tags": ["C#","Unity"],
+        "description": "Plusieurs prototype de jeux réalisés durant des gamejam. Lien de mon itch.io : https://nekoblakii.itch.io",
+        "features": ["Recherche d'idées","Insertion du graphisme/animation","Apprentissage du travail en groupe"],
+        "screenshots" : ["images/demo/gamejam.gif"]
     }
 }

@@ -46,8 +46,6 @@ $(function(){
 
     function showWithoutAnimation(){
         if(window.matchMedia("(max-width: 768px)").matches){
-
-
             let desktopElements = document.querySelectorAll(".desktop , #skill-description > div > *, #formations-container > div, #experiences-container > div > div");
             desktopElements.forEach(element => {
                 element.classList.remove("desktop");
@@ -256,43 +254,48 @@ $(function(){
     request.responseType = 'json';
     request.send();
 
-    /* CLICK SUR UN PROJET */
-    $(".project").on("click",function(event){
-        let modal = document.getElementById('modal');
-        modal.querySelector('.modal-title').innerHTML = this.innerText;
-
-        name = this.id;
-  
-        var json = request.response;
-
-        let body = modal.querySelector('.modal-body');
-        
-        body.innerHTML = '<div class="modal-screenshots"><img class="modal-mainscreenshot" src="' + json[name].screenshots[0] + '" alt="..."></div>';
-
-        var tags ='';
-        json[name].tags.forEach(tag => {
-            tags += '<div class="modal-tag">' + tag + '</div>';
+        /* CLICK SUR UN PROJET */
+        $(".project").on("click",function(event){
+            // On recupere l element HTML de notre modal
+            let modal = document.getElementById('modal');
+    
+            // On initialise le titre de la modal par le text du projet clique
+            modal.querySelector('.modal-title').innerHTML = this.innerText;
+    
+            // On recupere le nom du projet sur lequel on a clique
+            name = this.id;
+            // On recupere notre JSON
+            var json = request.response;
+    
+            let body = modal.querySelector('.modal-body');
+    
+            // Creation du GIF du projet
+            body.innerHTML = '<div class="modal-screenshots"><img class="modal-mainscreenshot" src="' + json[name].screenshots[0] + '" alt="..."></div>';
+    
+            // Creation des tags
+            var tags ='';
+            json[name].tags.forEach(tag => {
+                tags += '<div class="modal-tag">' + tag + '</div>';
+            });
+            body.innerHTML += '<div class="modal-tags">' + tags + '</div>';
+    
+            body.innerHTML += '<div class="modal-description">' + json[name].description + '</div>';
+    
+            // Creation des fonctionnalites
+            body.innerHTML += '<h4>Fonctionnalités:</h4>';
+            var features ='';
+            json[name].features.forEach(feature => {
+                features += '<li class="modal-feature">' + feature + '</li>';
+            });
+            body.innerHTML += '<ul class="modal-features">' + features +'</ul>';
+            /* UNIQUEMENT EN LIGNE
+            $.getJSON( "/json/portfolio.json", function( json ) {
+                console.log( "JSON : " + json.name.description);
+            });*/
+            // Affichage du modal une fois les info completees
+            $('#modal').modal('show');
         });
-        body.innerHTML += '<div class="modal-tags">' + tags + '</div>';
-
-        body.innerHTML += '<div class="modal-description">' + json[name].description + '</div>';
-        
-        body.innerHTML += '<h4>Fonctionnalités:</h4>';
-        var features ='';
-        json[name].features.forEach(feature => {
-            features += '<li class="modal-feature">' + feature + '</li>';
-        });
-        body.innerHTML += '<ul class="modal-features">' + features +'</ul>';
-
-        
-
-        /* UNIQUEMENT EN LIGNE
-        $.getJSON( "/json/portfolio.json", function( json ) {
-            console.log( "JSON : " + json.name.description);
-        });*/
-
-        $('#modal').modal('show');
-    });
+    
 
 
     $(window).scroll(function() {
@@ -354,6 +357,12 @@ $(function(){
                 });
                 anime({
                     targets: '.formation3',
+                    translateX: -2000,
+                    delay: anime.stagger(100),
+                    easing: 'easeInOutSine'
+                });
+                anime({
+                    targets: '.formation4',
                     translateX: -2000,
                     delay: anime.stagger(100),
                     easing: 'easeInOutSine'
