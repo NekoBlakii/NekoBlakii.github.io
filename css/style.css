@@ -794,6 +794,11 @@ a, a:hover
 
 .formation3 .desktop
 {
+    top: -2000px;
+}
+
+.formation4 .desktop
+{
     left: 2000px;
 }
 

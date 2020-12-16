@@ -357,13 +357,13 @@ $(function(){
                 });
                 anime({
                     targets: '.formation3',
-                    translateX: -2000,
+                    translateY: 2000,
                     delay: anime.stagger(100),
                     easing: 'easeInOutSine'
                 });
                 anime({
                     targets: '.formation4',
-                    translateX: 2000,
+                    translateX: -2000,
                     delay: anime.stagger(100),
                     easing: 'easeInOutSine'
                 });
