@@ -5,8 +5,9 @@ $(function(){
     var isEnded= false;
     var y_offsetWhenScrollDisabled = 0;
 
-    // Si on est en mode desktop et qu'on a deja scroll un peu alors on ne refait pas l animation du debut
-    if (performance.type == 1 && ($(window).scrollTop() > 0)) {
+    // Si on on a deja scroll un peu alors on ne refait pas l animation du debut
+    if(($(window).scrollTop() > 0)) {
+        console.log("COUCOU");
         isRefresh = true;
         showNavBar();
         var svgName = document.getElementById('svg-name');
@@ -21,6 +22,7 @@ $(function(){
 
     // AU START - Si on est en dessous de 768px on va enlever les classes desktop et desactiver les animations
     if(window.matchMedia("(max-width: 768px)").matches){
+        enableScrollOnBody();
         showWithoutAnimation();
     }
 
@@ -32,6 +34,7 @@ $(function(){
     };
 
     // Si on ne refresh pas la page alors on lance l animation du loading
+
     if(!isRefresh)
     {
         animationLoading();
