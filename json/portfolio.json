@@ -45,7 +45,21 @@
     {
         "tags": ["C#","Unity"],
         "description": "Plusieurs prototype de jeux réalisés durant des gamejam.<a href='https://nekoblakii.itch.io'>Lien</a>",
-        "features": ["Recherche d'idées","Insertion du graphisme/animation","Apprentissage du travail en groupe"],
+        "features": ["Creation d un systeme de dialogue avec choix","Insertion du graphisme/animation","Apprentissage du travail en groupe"],
         "screenshots" : ["images/demo/gamejam.gif"]
+    },
+    "temnotes":
+    {
+        "tags": ["Angular","Ionic"],
+        "description": "Application mobile pour notes des informations lors d'un match temtem avec création d'equipe",
+        "features": ["Utilisation d'API","Affichage des stats des temtem","Barre de recherche","CRUD equipe Temtem"],
+        "screenshots" : ["images/demo/gamejam.gif"]
+    },
+    "flappyship":
+    {
+        "tags": ["C#","Unity","Firebase"],
+        "description": "Jeu mobile reprenant le jeu Flappy bird, avec tableau highscore",
+        "features": ["Intégration Firebase pour Inscription/Connexion","BDD NO SQL","Tableau des scores"],
+        "screenshots" : ["images/demo/flappyship.gif"]
     }
 }
