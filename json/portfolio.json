@@ -53,7 +53,7 @@
         "tags": ["Angular","Ionic","MongoDB"],
         "description": "Application mobile pour notes des informations lors d'un match temtem avec création d'equipe",
         "features": ["Utilisation d'API","Affichage des stats des temtem","Barre de recherche","CRUD equipe Temtem"],
-        "screenshots" : ["images/demo/gamejam.gif"]
+        "screenshots" : ["images/demo/temnotes.gif"]
     },
     "flappyship":
     {
