@@ -44,7 +44,7 @@
     "gamejam":
     {
         "tags": ["C#","Unity"],
-        "description": "Plusieurs prototype de jeux réalisés durant des gamejam.<a href='https://nekoblakii.itch.io'>Lien</a>",
+        "description": "Plusieurs prototype de jeux réalisés durant des gamejam.<br> <a href='https://nekoblakii.itch.io'>Lien vers mes projets</a>",
         "features": ["Creation d un systeme de dialogue avec choix","Insertion du graphisme/animation","Apprentissage du travail en groupe"],
         "screenshots" : ["images/demo/gamejam.gif"]
     },
