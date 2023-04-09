@@ -743,6 +743,10 @@ a, a:hover
     position: relative;
 }
 
+#formations .container{
+    width: 90%;
+}
+
 #formations .heading h2
 {
     color: var(--couleur-generale);
@@ -798,6 +802,11 @@ a, a:hover
 }
 
 .formation4 .desktop
+{
+    left: 2000px;
+}
+
+.formation5 .desktop
 {
     left: 2000px;
 }

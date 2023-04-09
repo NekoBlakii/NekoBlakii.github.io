@@ -148,6 +148,12 @@ $(function(){
                         delay: anime.stagger(100),
                         easing: 'easeInOutSine'
                     });
+                    anime({
+                        targets: '.formation5',
+                        translateX: -1800,
+                        delay: anime.stagger(100),
+                        easing: 'easeInOutSine'
+                    });
                     isOver = true
                     isAnimated = true;
                 }
