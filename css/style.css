@@ -11,6 +11,7 @@ body
     --couleur-text : #7c7c7c;
     --couleur-flash : #C96567;
     --couleur-flash : #FFD376;
+    background-color: var(--couleur-fond);
 }
 
 /* SCROLLBAR */
@@ -90,7 +91,7 @@ section .heading
 
 section:nth-child(2n)
 {
-    background-color: var(--couleur-fond);
+    background-color: var(--couleur-sombre);
 }
 
 .traitcouleur
@@ -807,6 +808,11 @@ a, a:hover
 }
 
 .formation5 .desktop
+{
+    left: -1500px;
+}
+
+.formation6 .desktop
 {
     left: 2000px;
 }
